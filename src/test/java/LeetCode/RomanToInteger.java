@@ -12,7 +12,7 @@ public class RomanToInteger {
         System.out.println(romanToInt("MCMXCIV"));// 1994
     }
 
-    public static int romanToInt(String s) {
+    public static int romanToInt(String s) {//O(n)
         Map<Character, Integer> romanMap = new HashMap<>();
         romanMap.put('I', 1);
         romanMap.put('V', 5);

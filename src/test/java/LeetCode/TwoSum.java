@@ -11,7 +11,7 @@ public class TwoSum {
         Assert.assertEquals(twoSum(new int[]{3, 2, 4}, 7), new int[]{0, 2});
     }
 
-    public static int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {//O(n)
         Map<Integer, Integer> numToIndex = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];

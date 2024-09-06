@@ -6,7 +6,7 @@ public class Palindrome {
         System.out.println(isPalindrome(121));
     }
 
-    public static boolean isPalindrome(int x) {
+    public static boolean isPalindrome(int x) {//O(log(x))
         if (x < 0) {
             return false;
         }
