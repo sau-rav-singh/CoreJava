@@ -1,10 +1,13 @@
-package DataStructure.LinkedList;
+package DataStructure.DoublyLinkedList;
 
 public class Node {
     int value;
     Node next;
-    public Node(int value) {
+    Node prev;
+
+    Node(int value) {
         this.value = value;
         this.next = null;
+        this.prev = null;
     }
 }
