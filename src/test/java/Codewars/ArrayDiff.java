@@ -1,11 +1,13 @@
 package Codewars;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ArrayDiff {
 
     public static void main(String[] args) {
-        int[] ans = arrayDiff(new int[]{1, 2, 2, 2, 3, 3}, new int[]{2});
+        int[] ans = arrayDiff(new int[]{1, 2, 2, 2, 3, 3, 4}, new int[]{2, 4});
         for (int a : ans) {
             System.out.println(a);
         }
