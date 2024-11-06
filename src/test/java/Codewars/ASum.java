@@ -1,6 +1,7 @@
 package Codewars;
 
 public class ASum {
+//calculate the number of sequential cubes needed to reach a given volume m, or returns -1
 
     public static long findNb(long m) {
         long n = 0;
