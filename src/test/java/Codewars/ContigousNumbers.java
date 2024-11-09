@@ -25,4 +25,5 @@ public class ContigousNumbers {
 
         return result.stream().mapToInt(i->i).toArray();
     }
+
 }

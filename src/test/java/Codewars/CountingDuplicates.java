@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CountingDuplicates {
+
+    //count the number of distinct characters in a string that appear more than once. The method should be case-insensitive
+
     public static void main(String[] args) {
         System.out.println(duplicateCount("Indivisibilities"));
     }
