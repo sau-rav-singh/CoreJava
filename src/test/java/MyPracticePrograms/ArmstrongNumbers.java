@@ -1,8 +1,8 @@
 package MyPracticePrograms;
 
 public class ArmstrongNumbers {
+
     public static void main(String[] args) {
-        // Single number Armstrong check
         int num1 = 153;
         if (isArmstrong(num1)) {
             System.out.println("yes");
@@ -10,7 +10,6 @@ public class ArmstrongNumbers {
             System.out.println("No");
         }
 
-        // Armstrong numbers within an interval
         int first = 50;
         int second = 50000000;
         for (int i = first; i <= second; i++) {
@@ -27,7 +26,10 @@ public class ArmstrongNumbers {
 
         while (num != 0) {
             int rem = num % 10;
-            pow += power(rem, digits);
+            pow += (int) Math.pow(rem, digits);
+            if (pow > originalNum) {
+                return false; // Early termination
+            }
             num /= 10;
         }
 
@@ -41,14 +43,5 @@ public class ArmstrongNumbers {
             digits++;
         }
         return digits;
-    }
-
-    static int power(int base, int exponent) {
-        int result = 1;
-        while (exponent > 0) {
-            result *= base;
-            exponent--;
-        }
-        return result;
     }
 }

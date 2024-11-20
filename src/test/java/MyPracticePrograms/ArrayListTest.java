@@ -9,24 +9,23 @@ import java.util.Set;
 public class ArrayListTest {
 
     public static void main(String[] args) {
-        ArrayList<String> dupList = new ArrayList<>(Arrays.asList("hello", "helloishi", "mastercard"));
+        String[] words = {"hello", "helloishi", "mastercard"};
+        String[] result = new String[words.length];
 
-        dupList.replaceAll(ArrayListTest::removeDuplicate);
-
-        System.out.println(dupList);
-    }
-
-    public static String removeDuplicate(String input) {
-        Set<Character> uniqueChars = new HashSet<>();
-        StringBuilder result = new StringBuilder();
-
-        for (int i = 0; i < input.length(); i++) {
-            char currentChar = input.charAt(i);
-            if (uniqueChars.add(currentChar)) {
-                result.append(currentChar);
-            }
+        for (int i = 0; i < words.length; i++) {
+            result[i] = removeDuplicates(words[i]);
         }
 
-        return result.toString();
+        System.out.println(Arrays.toString(result));
+    }
+
+    private static String removeDuplicates(String word) {
+        StringBuilder sb = new StringBuilder();
+        for (char c : word.toCharArray()) {
+            if (sb.indexOf(String.valueOf(c)) == -1) {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
     }
 }
