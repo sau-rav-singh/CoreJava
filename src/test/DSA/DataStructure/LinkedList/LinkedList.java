@@ -141,7 +141,7 @@ public class LinkedList {
     }
 
     public void reverse() {
-        if (length <= 1) return;  // No need to reverse for 0 or 1 element
+        if (length <= 1) return;
 
         Node temp = head;
         head = tail;
