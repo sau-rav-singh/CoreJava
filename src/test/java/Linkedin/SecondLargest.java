@@ -1,6 +1,8 @@
 package Linkedin;
 
 public class SecondLargest {
+    //Time Complexity: O(n)
+    //Space Complexity:O(1)
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 1, 2, 3, 4};
         int largest = Integer.MIN_VALUE;

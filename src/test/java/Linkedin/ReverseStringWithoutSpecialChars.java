@@ -1,6 +1,8 @@
 package Linkedin;
 
 public class ReverseStringWithoutSpecialChars {
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
     public static String reverseString(String str) {
         char[] charArray = str.toCharArray();
         int left = 0, right = charArray.length - 1;

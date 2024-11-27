@@ -1,6 +1,8 @@
 package Linkedin;
 
 public class StringPalindrome {
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
     public static void main(String[] args) {
         String name="Nitin";
         StringBuilder sb=new StringBuilder();

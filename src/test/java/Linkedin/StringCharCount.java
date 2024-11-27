@@ -4,6 +4,8 @@ public class StringCharCount {
     //string concatination :
     // Input: aaabbbacfwww
     // Output: a3b3acfw3
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
 
     public static void main(String[] args) {
         String input = "aaabbbacfwww";

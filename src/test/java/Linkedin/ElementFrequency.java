@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ElementFrequency {
-
+//Space/Time:O(n)
     public static void main(String[] args) {
         int[] arr=new int[]{1,2,3,1,2,3,4};
         Map<Integer,Integer> hm=new HashMap<>();

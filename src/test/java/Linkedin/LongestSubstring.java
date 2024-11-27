@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LongestSubstring {
+    //Time Complexity: O(n)
+    //Space Complexity: O(min(n, m))
     public static int lengthOfLongestSubstring(String s) {
         Set<Character> set = new HashSet<>();
         int maxLength = 0;
