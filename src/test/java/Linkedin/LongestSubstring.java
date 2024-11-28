@@ -24,8 +24,8 @@ public class LongestSubstring {
     }
 
     public static void main(String[] args) {
-        String s = "abacdef";
+        String s = "abb";
         int length = lengthOfLongestSubstring(s);
-        System.out.println("Length of the longest substring: " + length); // Output: 3
+        System.out.println("Length of the longest substring: " + length);
     }
 }
