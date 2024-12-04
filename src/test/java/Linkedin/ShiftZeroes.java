@@ -3,24 +3,26 @@ package Linkedin;
 import java.util.Arrays;
 
 public class ShiftZeroes {
-    //T:O(n log n)
-    //S:O(n)
+    //T:O(n)
+    //S:O(1)
     public static void main(String[] args) {
         int[] array = {1, 4, 14, 0, 8, 9, 0, 5, 0, 6};
 
-        int[] resultFront = shiftZeroes(array, true);
-        System.out.println("Zeroes to front: " + Arrays.toString(resultFront));
-
-        int[] resultRear = shiftZeroes(array, false);
-        System.out.println("Zeroes to rear: " + Arrays.toString(resultRear));
+        int[] resultFront = shiftZeroesToTheEnd(array);
+        System.out.println("Zeroes to End: " + Arrays.toString(resultFront));
     }
 
-    public static int[] shiftZeroes(int[] arr, boolean toFront) {
-        return Arrays.stream(arr)
-                .boxed()
-                .sorted((a, b) -> toFront ? Integer.compare(a == 0 ? 0 : 1, b == 0 ? 0 : 1) : Integer.compare(a == 0 ? 1 : 0, b == 0 ? 1 : 0))
-                .mapToInt(Integer::intValue)
-                .toArray();
+    public static int[] shiftZeroesToTheEnd(int[] arr) {
+       int count=0;
+       for(int i=0;i<arr.length;i++){
+           if(arr[i]!=0){
+               int temp=arr[i];
+               arr[i]=arr[count];
+               arr[count]=temp;
+               count++;
+           }
+       }
+       return arr;
     }
 }
 

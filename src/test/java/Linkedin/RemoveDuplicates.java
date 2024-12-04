@@ -2,7 +2,7 @@ package Linkedin;
 
 import java.util.Arrays;
 
-public class RemoveDuplicatesWithoutHashSet {
+public class RemoveDuplicates {
     //t:nlogn
     //S:1
     public static void main(String[] args) {
