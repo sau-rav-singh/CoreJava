@@ -2,34 +2,24 @@ package Linkedin;
 
 public class LongestCommonPrefix {
     public static void main(String[] args) {
-        String[] strs = {"flower", "flow", "flight"};
-        System.out.println(findLongestCommonPrefix(strs));
+        String[] strs = {"flower", "flow", "flight","f"};
+        System.out.println(longestCommonPrefix(strs));
     }
 
-    public static String findLongestCommonPrefix(String[] strs) {
-        if (strs == null || strs.length == 0) {
-            return "";
+    static String longestCommonPrefix(String[] arr) {
+        String result = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            int len = commonPrefixLen(result, arr[i]);
+            result = result.substring(0, len);
         }
-
-        int minLength = Integer.MAX_VALUE;
-        for (String str : strs) {
-            minLength = Math.min(minLength, str.length());
+        return result;
+    }
+    static int commonPrefixLen(String s1, String s2) {
+        int commonLength = 0;
+        int len = Math.min(s1.length(), s2.length());
+        while (commonLength < len && s1.charAt(commonLength) == s2.charAt(commonLength)) {
+            commonLength++;
         }
-
-        String prefix = strs[0].substring(0, minLength);
-        for (int i = 0; i < minLength; i++) {
-            boolean ans = true;
-            for (String str : strs) {
-                if (!str.startsWith(prefix)) {
-                    ans = false;
-                    break;
-                }
-            }
-            if (!ans) {
-                prefix = prefix.substring(0, minLength - 1);
-                minLength--;
-            }
-        }
-        return prefix;
+        return commonLength;
     }
 }
