@@ -12,6 +12,7 @@ public class StringPermutations {
             System.out.print(ans + " ");
             return;
         }
+
         boolean[] alpha = new boolean[26];
 
         for (int i = 0; i < str.length(); i++) {
