@@ -8,13 +8,13 @@ public class InsertionSort {
         int length = array.length;
 
         for (int i = 1; i < length; i++) {
-            int key = array[i];
-            int j = i - 1;
-            while (j >= 0 && array[j] > key) {
-                array[j + 1] = array[j];
-                j = j - 1;
+            int curr = array[i];
+            int prev = i - 1;
+            while (prev >= 0 && array[prev] > curr) {
+                array[prev + 1] = array[prev];
+                prev--;
             }
-            array[j + 1] = key;
+            array[prev + 1] = curr;
         }
 
         Arrays.stream(array).forEach(e -> System.out.print(e + " "));
