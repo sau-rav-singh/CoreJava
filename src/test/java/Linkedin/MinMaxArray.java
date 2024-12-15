@@ -10,9 +10,8 @@ public class MinMaxArray {
         int min, max;
         int n = arr.length;
 
-        // Initialize min and max
         int i;
-        if (n % 2 == 0) { // Even number of elements
+        if (n % 2 == 0) {
             if (arr[0] < arr[1]) {
                 min = arr[0];
                 max = arr[1];
@@ -20,14 +19,12 @@ public class MinMaxArray {
                 min = arr[1];
                 max = arr[0];
             }
-            i = 2; // Start from the third element
-        } else { // Odd number of elements
+            i = 2;
+        } else {
             min = arr[0];
             max = arr[0];
-            i = 1; // Start from the second element
+            i = 1;
         }
-
-        // Compare in pairs
         while (i < n - 1) {
             if (arr[i] < arr[i + 1]) {
                 min = Math.min(min, arr[i]);
@@ -36,9 +33,8 @@ public class MinMaxArray {
                 min = Math.min(min, arr[i + 1]);
                 max = Math.max(max, arr[i]);
             }
-            i += 2; // Move to the next pair
+            i += 2;
         }
-
         System.out.println("Minimum: " + min);
         System.out.println("Maximum: " + max);
     }
