@@ -1,5 +1,3 @@
-package Linkedin;
-
 public class CamelCase {
     public static void main(String[] args) {
         String str = "Here comes the garden";//hereComesTheGarden
