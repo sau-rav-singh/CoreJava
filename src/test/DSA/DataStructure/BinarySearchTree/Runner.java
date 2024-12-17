@@ -6,6 +6,6 @@ public class Runner {
 
         BinarySearchTree bst = new BinarySearchTree();
         System.out.println(bst.root);
-        bst.insert(20);
+        System.out.println(bst.insert(20));
     }
 }

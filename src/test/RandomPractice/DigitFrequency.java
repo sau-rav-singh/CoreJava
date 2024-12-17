@@ -1,4 +1,4 @@
-public class ElementFrequency {
+public class DigitFrequency {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 1, 2, 3, 4, 44};
         int[] counter = new int[arr.length];

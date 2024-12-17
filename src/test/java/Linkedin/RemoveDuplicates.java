@@ -32,7 +32,6 @@ public class RemoveDuplicates {
 
     public static Integer[] removeDuplicatesInsOrderMaintain(Integer[] arr) {
         Set<Integer> lhs=new LinkedHashSet<>(Arrays.asList(arr));
-
         return lhs.toArray(new Integer[0]);
     }
 }
