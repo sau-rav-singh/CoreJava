@@ -1,4 +1,4 @@
-package RandomPractice;
+package MyPracticePrograms;
 import java.util.Stack;
 
 public class areBracketsValid {

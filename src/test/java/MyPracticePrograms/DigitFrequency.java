@@ -1,4 +1,4 @@
-package RandomPractice;
+package MyPracticePrograms;
 
 public class DigitFrequency {
     public static void main(String[] args) {

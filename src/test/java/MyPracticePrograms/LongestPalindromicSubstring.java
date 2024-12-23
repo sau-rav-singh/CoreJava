@@ -1,4 +1,4 @@
-package Linkedin;
+package MyPracticePrograms;
 
 public class LongestPalindromicSubstring {
 
@@ -36,4 +36,3 @@ public class LongestPalindromicSubstring {
         return true;
     }
 }
-
