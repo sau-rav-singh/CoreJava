@@ -1,3 +1,5 @@
+package RandomPractice;
+
 public class FrequencyOfChars {
 
     //calculate frequency of each character of string without using HashMap.

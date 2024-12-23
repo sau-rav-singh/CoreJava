@@ -1,3 +1,5 @@
+package RandomPractice;
+
 import java.util.Arrays;
 
 public class RemoveArrayDuplicates {

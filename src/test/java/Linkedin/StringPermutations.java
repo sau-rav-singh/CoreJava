@@ -6,7 +6,7 @@ import java.util.Set;
 public class StringPermutations {
     //t:n!,s:n
     public static void main(String[] args) {
-        printPermutn("geek", "");
+        //printPermutn("geek", "");
         System.out.println();
         System.out.print(permute("geek"));
     }

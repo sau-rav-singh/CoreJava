@@ -1,3 +1,5 @@
+package RandomPractice;
+
 public class CharacterFrequency {
     static{
         System.out.println("Static Block");
