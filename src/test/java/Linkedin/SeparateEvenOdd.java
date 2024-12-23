@@ -14,17 +14,15 @@ public class SeparateEvenOdd {
         if (nums == null || nums.length <= 1) {
             return;
         }
-        int insertIndex = 0;
+        int j = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] % 2 == 0) {
-                if (i != insertIndex) {
-                    int temp = nums[i];
-                    for (int j = i; j > insertIndex; j--) {
-                        nums[j] = nums[j - 1];
-                    }
-                    nums[insertIndex] = temp;
+                int temp = nums[i];
+                for (int k = i; k > j; k--) {
+                    nums[k] = nums[k - 1];
                 }
-                insertIndex++;
+                nums[j] = temp;
+                j++;
             }
         }
     }
