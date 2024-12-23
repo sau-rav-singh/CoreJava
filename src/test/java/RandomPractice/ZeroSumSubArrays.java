@@ -1,4 +1,4 @@
-package MyPracticePrograms;
+package RandomPractice;
 
 import java.util.*;
 

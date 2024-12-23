@@ -1,4 +1,4 @@
-package MyPracticePrograms;
+package RandomPractice;
 
 public class CharacterFrequency {
     static{

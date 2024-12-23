@@ -1,4 +1,4 @@
-package MyPracticePrograms;
+package RandomPractice;
 
 public class StringReverseWithoutSpecialChars {
     public static void main(String[] args) {

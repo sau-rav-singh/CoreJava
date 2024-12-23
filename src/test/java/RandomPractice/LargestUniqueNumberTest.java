@@ -1,4 +1,4 @@
-package MyPracticePrograms;
+package RandomPractice;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
