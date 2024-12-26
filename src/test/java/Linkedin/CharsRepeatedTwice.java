@@ -1,6 +1,5 @@
 package Linkedin;
 
-
 public class CharsRepeatedTwice {
     public static void main(String[] args) {
         String str = "aabccdad";//a,c,d
