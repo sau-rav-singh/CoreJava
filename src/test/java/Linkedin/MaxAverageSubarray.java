@@ -15,11 +15,11 @@ public class MaxAverageSubarray {
         for (int i = 0; i < k; i++) {
             currentSum += arr[i];
         }
-        double maxSum = currentSum;
+        double maxWindowSum = currentSum;
         for (int i = k; i < arr.length; i++) {
             currentSum = currentSum + arr[i] - arr[i - k];
-            maxSum = Math.max(maxSum, currentSum);
+            maxWindowSum = Math.max(maxWindowSum, currentSum);
         }
-        return maxSum / k;
+        return maxWindowSum / k;
     }
 }
