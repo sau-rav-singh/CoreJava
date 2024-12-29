@@ -3,7 +3,7 @@ package Linkedin;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class DictionaryExample {
+public class HashTableExample {
     public static void main(String[] args) {
         Dictionary<Integer,Integer> dict=new Hashtable<>();
         List<Integer> list=new ArrayList<>(Arrays.asList(1,2,3));
