@@ -60,10 +60,32 @@ public class LongestUniqueCharSubstring {
         return inputString.substring(maximumSubstringStart, maximumSubstringStart + maximumSubstringLength);
     }
 
+    static String longestSubStr(String str) {
+        Set<Character> hs = new HashSet<>();
+        int k = 0;
+        int maxLength = 0;
+        int startIndex = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            while (hs.contains(str.charAt(i))) {
+                hs.remove(str.charAt(k));
+                k++;
+            }
+            hs.add(str.charAt(i));
+
+            if (i - k + 1 > maxLength) {
+                maxLength = i - k + 1;
+                startIndex = k;
+            }
+        }
+        return str.substring(startIndex, startIndex + maxLength);
+    }
+
     public static void main(String[] args) {
         String s = "abb";
         int length = lengthOfLongestUniqueCharSubstring(s);
         System.out.println("Length of the longest substring: " + length);
         System.out.println(findLongestUniqueSubstring("GEEKSFORGEEKS"));
+        System.out.println(longestSubStr("GEEKSFORGEEKS"));
     }
 }
