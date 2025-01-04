@@ -66,21 +66,15 @@ public class MoveNegativesTest {
 
 
     private void moveNegatives(int[] nums) {
-        if (nums == null || nums.length <= 1) {
-            return;
-        }
-        int insertIndex = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] < 0) {
-                if (i != insertIndex) {
-                    int temp = nums[i];
-                    for (int j = i; j > insertIndex; j--) {
-                        nums[j] = nums[j - 1];
-                    }
-                    nums[insertIndex] = temp;
-                }
-                insertIndex++;
+        int i=0,j=0;
+        for(;j<nums.length;j++){
+            if(nums[j]<0){
+                int temp=nums[j];
+                nums[j]=nums[i];
+                nums[i]=temp;
+                i++;
             }
         }
+        System.out.println(Arrays.toString(nums));
     }
 }

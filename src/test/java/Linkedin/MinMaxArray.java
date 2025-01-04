@@ -8,9 +8,10 @@ public class MinMaxArray {
         }
 
         int min, max;
+        int i;
         int n = arr.length;
 
-        int i;
+        // Initialize min and max based on the first pair or single element
         if (n % 2 == 0) {
             if (arr[0] < arr[1]) {
                 min = arr[0];
@@ -21,20 +22,26 @@ public class MinMaxArray {
             }
             i = 2;
         } else {
-            min = arr[0];
-            max = arr[0];
+            min = max = arr[0];
             i = 1;
         }
+
+        // Compare in pairs to reduce comparisons
         while (i < n - 1) {
-            if (arr[i] < arr[i + 1]) {
-                min = Math.min(min, arr[i]);
-                max = Math.max(max, arr[i + 1]);
+            int num1 = arr[i];
+            int num2 = arr[i + 1];
+
+            if (num1 < num2) {
+                min = Math.min(min, num1);
+                max = Math.max(max, num2);
             } else {
-                min = Math.min(min, arr[i + 1]);
-                max = Math.max(max, arr[i]);
+                min = Math.min(min, num2);
+                max = Math.max(max, num1);
             }
             i += 2;
         }
+
+        // Print results
         System.out.println("Minimum: " + min);
         System.out.println("Maximum: " + max);
     }
