@@ -2,7 +2,7 @@ package Linkedin;
 
 public class LongestCommonPrefix {
     public static void main(String[] args) {
-        String[] strs = {"flower", "flow", "flight","f"};
+        String[] strs = {"flower", "flow", "flight"};
         System.out.println(longestCommonPrefix(strs));
     }
 
@@ -14,11 +14,15 @@ public class LongestCommonPrefix {
         }
         return result;
     }
-    static int commonPrefixLen(String s1, String s2) {
-        int commonLength = 0;
-        int len = Math.min(s1.length(), s2.length());
-        while (commonLength < len && s1.charAt(commonLength) == s2.charAt(commonLength)) {
-            commonLength++;
+    static int commonPrefixLen(String a, String b) {
+        int commonLength=0;
+        int minL=Math.min(a.length(),b.length());
+        for(int i=0;i<minL;i++){
+            if(a.charAt(i)==b.charAt(i)){
+                commonLength++;
+            }else{
+                break;
+            }
         }
         return commonLength;
     }

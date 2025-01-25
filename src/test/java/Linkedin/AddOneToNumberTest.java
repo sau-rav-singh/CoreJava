@@ -8,13 +8,18 @@ import java.util.Collections;
 import java.util.List;
 
 public class AddOneToNumberTest {
-    public static int[] addOne(int[] arr) {
+       public static int[] addOne(int[] arr) {
         List<Integer> result = new ArrayList<>();
         int carry = 1;
         for (int i = arr.length - 1; i >= 0; i--) {
-            int sum = arr[i] + carry;
-            result.add(sum % 10);
-            carry = sum / 10;
+            int plusOne = arr[i] + carry;
+            if (plusOne > 9) {
+                result.add(0);
+                carry = plusOne / 10;
+            } else {
+                result.add(plusOne);
+                carry = 0;
+            }
         }
         if (carry > 0) {
             result.add(carry);
@@ -32,4 +37,3 @@ public class AddOneToNumberTest {
         Assert.assertEquals(new int[]{6}, addOne(new int[]{5}));
     }
 }
-

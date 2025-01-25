@@ -12,12 +12,8 @@ public class CharacterFrequencyTest {
         for (char c : arr) {
             countArr[c]++;
         }
-        for(int i=0;i<countArr.length;i++){
-            if(countArr[i]>0)
-                System.out.println((char)i+" :"+countArr[i]);
+        for (int i = 0; i < countArr.length; i++) {
+            if (countArr[i] > 0) System.out.println((char) i + " :" + countArr[i]);
         }
-
     }
-
-
 }

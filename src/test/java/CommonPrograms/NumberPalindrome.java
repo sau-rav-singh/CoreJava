@@ -16,14 +16,16 @@ public class NumberPalindrome {
         }
     }
 
-    static boolean isPalindrome(int n) {
-        int r, sum = 0, temp;
-        temp = n;
-        while (n > 0) {
-            r = n % 10;
-            sum = (sum * 10) + r;
-            n = n / 10;
+    static boolean isPalindrome(int x) {
+        if (x < 0) return false;
+
+        int temp = x;
+        int num = 0;
+        while (x != 0) {
+            int rem = x % 10;
+            num = num * 10 + rem;
+            x /= 10;
         }
-        return temp == sum;
+        return num == temp;
     }
 }
