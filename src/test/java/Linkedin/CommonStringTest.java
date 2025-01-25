@@ -6,9 +6,6 @@ import org.testng.annotations.Test;
 import java.util.*;
 
 public class CommonStringTest {
-    //String[] a1 = {"apple", "banana", "single", "Laxmi", "Raghu"};
-    //String[] a2 = {"june", "july", "apple", "april", "Laxmi"};
-    //𝐎𝐮𝐭𝐩𝐮𝐭:["apple", "Laxmi"]
     //Time Complexity: O(n + m)
     //Space Complexity: O(n + m)
 

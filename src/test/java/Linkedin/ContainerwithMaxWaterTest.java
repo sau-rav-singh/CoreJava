@@ -11,7 +11,7 @@ public class ContainerwithMaxWaterTest {
     @Test
     public void testMaxArea() {
         List<Integer> height = new ArrayList<>(Arrays.asList(1, 8, 6, 2, 5, 4, 8, 3, 7));
-        Assert.assertEquals(calculateMaxArea(height), 49, "Max area does not match the expected value!");
+        Assert.assertEquals(calculateMaxArea(height), 49);
     }
 
     public int calculateMaxArea(List<Integer> height) {
