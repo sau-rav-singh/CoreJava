@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class AddOneToNumberTest {
-       public static int[] addOne(int[] arr) {
+    public static int[] addOne(int[] arr) {
         List<Integer> result = new ArrayList<>();
         int carry = 1;
         for (int i = arr.length - 1; i >= 0; i--) {

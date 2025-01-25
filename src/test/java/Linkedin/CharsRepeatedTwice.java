@@ -9,9 +9,8 @@ public class CharsRepeatedTwice {
         }
         for(int i=0;i<counter.length;i++){
             if(counter[i]>=2){
-                System.out.println(((char)(i+'a'))+" : "+counter[i]);
+                System.out.println((char)(i+'a')+" : "+counter[i]);
             }
         }
-
     }
 }
