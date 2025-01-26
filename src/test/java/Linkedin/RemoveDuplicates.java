@@ -11,8 +11,8 @@ public class RemoveDuplicates {
         int[] arr = {1, 1, 2, 3, 4, 4, 5};
         int[] result = removeDuplicates(arr);
         System.out.println(Arrays.toString(result));
-        Integer[] arr1 = {1, 1, 2, 3, 4, 4, 5};
-        Integer[] result1=removeDuplicatesInsOrderMaintain(arr1);
+        int[] arr1 = {1, 1, 2, 3, 4, 4, 5};
+        int[] result1=removeDuplicatesInsOrderMaintain(arr1);
         System.out.println(Arrays.toString(result1));
     }
 
@@ -30,8 +30,14 @@ public class RemoveDuplicates {
         return Arrays.copyOfRange(arr, j, arr.length);
     }
 
-    public static Integer[] removeDuplicatesInsOrderMaintain(Integer[] arr) {
-        Set<Integer> lhs=new LinkedHashSet<>(Arrays.asList(arr));
-        return lhs.toArray(new Integer[0]);
+    public static int[] removeDuplicatesInsOrderMaintain(int[] nums) {
+        int k = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[k - 1]) {
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+        return Arrays.copyOfRange(nums,0,k);
     }
 }

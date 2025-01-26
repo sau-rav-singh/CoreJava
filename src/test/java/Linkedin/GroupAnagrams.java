@@ -14,14 +14,20 @@ public class GroupAnagrams {
     public static List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> result = new ArrayList<>();
         boolean[] grouped = new boolean[strs.length];
+        String[] sortedStrings = new String[strs.length];
+
+        for (int i = 0; i < strs.length; i++) {
+            char[] arr = strs[i].toCharArray();
+            Arrays.sort(arr);
+            sortedStrings[i] = new String(arr);
+        }
 
         for (int i = 0; i < strs.length; i++) {
             if (grouped[i]) continue;
-            String current = strs[i];
             List<String> group = new ArrayList<>();
-            group.add(current);
+            group.add(strs[i]);
             for (int j = i + 1; j < strs.length; j++) {
-                if (areAnagrams(current, strs[j])) {
+                if (!grouped[j] && sortedStrings[i].equals(sortedStrings[j])) {
                     group.add(strs[j]);
                     grouped[j] = true;
                 }
@@ -30,15 +36,6 @@ public class GroupAnagrams {
         }
         return result;
     }
-
-    static boolean areAnagrams(String str1, String str2) {
-        char[] arr1 = str1.toCharArray();
-        char[] arr2 = str2.toCharArray();
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
-        return Arrays.equals(arr1, arr2);
-    }
-
     public static List<List<String>> groupAnagramsWithMap(String[] strs) {
         Map<String, List<String>> anagramMap = new HashMap<>();
         for (String str : strs) {
