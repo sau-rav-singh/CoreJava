@@ -8,17 +8,17 @@ public class IsomorphicStrings {
         if (str1.length() != str2.length()) {
             return false;
         }
-        HashMap<Character, Character> map = new HashMap<>();
-        HashSet<Character> mappedValues = new HashSet<>();
+
+        HashMap<Character, Character> map = new HashMap<>();//Tracks the mapping of characters from str1 to str2.
+        HashSet<Character> mappedValues = new HashSet<>();//Keeps track of the characters in str2 that are already mapped to ensure no two characters from str1 map to the same character in str2.
 
         for (int i = 0; i < str1.length(); i++) {
             char c1 = str1.charAt(i);
             char c2 = str2.charAt(i);
-            if (map.containsKey(c1)) {
-                if (map.get(c1) != c2) {
-                    return false;
-                }
-            } else {
+            if (map.getOrDefault(c1, c2) != c2) {
+                return false;
+            }
+            if (!map.containsKey(c1)) {
                 if (mappedValues.contains(c2)) {
                     return false;
                 }
@@ -31,7 +31,7 @@ public class IsomorphicStrings {
 
     public static void main(String[] args) {
         System.out.println(areIsomorphic("aab", "xxy")); // Output: true
-        System.out.println(areIsomorphic("foo", "bar")); // Output: false
+        System.out.println(areIsomorphic("bar", "foo")); // Output: false
         System.out.println(areIsomorphic("paper", "title")); // Output: true
         System.out.println(areIsomorphic("abc", "xyz")); // Output: true
     }
