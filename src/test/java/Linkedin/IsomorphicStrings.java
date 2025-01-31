@@ -1,5 +1,7 @@
 package Linkedin;
 
+import org.testng.Assert;
+
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -30,9 +32,9 @@ public class IsomorphicStrings {
     }
 
     public static void main(String[] args) {
-        System.out.println(areIsomorphic("aab", "xxy")); // Output: true
-        System.out.println(areIsomorphic("bar", "foo")); // Output: false
-        System.out.println(areIsomorphic("paper", "title")); // Output: true
-        System.out.println(areIsomorphic("abc", "xyz")); // Output: true
+        Assert.assertTrue(areIsomorphic("aab", "xxy"));
+        Assert.assertFalse(areIsomorphic("bar", "foo"));
+        Assert.assertTrue(areIsomorphic("paper", "title"));
+        Assert.assertTrue(areIsomorphic("abc", "xyz"));
     }
 }

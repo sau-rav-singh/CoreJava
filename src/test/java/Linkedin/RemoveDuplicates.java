@@ -1,5 +1,7 @@
 package Linkedin;
 
+import org.testng.Assert;
+
 import java.util.Arrays;
 
 public class RemoveDuplicates {
@@ -7,11 +9,9 @@ public class RemoveDuplicates {
     //S:1
     public static void main(String[] args) {
         int[] arr = {1, 1, 2, 3, 4, 4, 5};
-        int[] result = removeDuplicates(arr);
-        System.out.println(Arrays.toString(result));
+        Assert.assertEquals(removeDuplicates(arr),new int[]{2,3,1,4,5});
         int[] arr1 = {1, 1, 2, 3, 4, 4, 5};
-        int[] result1=removeDuplicatesInsOrderMaintain(arr1);
-        System.out.println(Arrays.toString(result1));
+        Assert.assertEquals(removeDuplicatesInsOrderMaintain(arr1),new int[]{1,2,3,4,5});
     }
 
     public static int[] removeDuplicates(int[] arr) {
@@ -29,13 +29,15 @@ public class RemoveDuplicates {
     }
 
     public static int[] removeDuplicatesInsOrderMaintain(int[] nums) {
-        int k = 1;
+        if (nums.length == 0) return nums;
+
+        int j = 0;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[k - 1]) {
-                nums[k] = nums[i];
-                k++;
+            if (nums[i] != nums[j]) {
+                j++;
+                nums[j] = nums[i];
             }
         }
-        return Arrays.copyOfRange(nums,0,k);
+        return Arrays.copyOfRange(nums, 0, j + 1);
     }
 }
