@@ -4,16 +4,16 @@ import org.testng.Assert;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class IsomorphicStrings {
     public static boolean areIsomorphic(String str1, String str2) {
         if (str1.length() != str2.length()) {
             return false;
         }
-
-        HashMap<Character, Character> map = new HashMap<>();//Tracks the mapping of characters from str1 to str2.
-        HashSet<Character> mappedValues = new HashSet<>();//Keeps track of the characters in str2 that are already mapped to ensure no two characters from str1 map to the same character in str2.
-
+        HashMap<Character, Character> map = new HashMap<>();
+        HashSet<Character> mappedValues = new HashSet<>();
         for (int i = 0; i < str1.length(); i++) {
             char c1 = str1.charAt(i);
             char c2 = str2.charAt(i);
