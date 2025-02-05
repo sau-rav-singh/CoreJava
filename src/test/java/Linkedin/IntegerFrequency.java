@@ -1,6 +1,6 @@
 package Linkedin;
 
-public class ElementFrequency {
+public class IntegerFrequency {
     //Time:O(n2)
     //Space:O(n)
     public static void countOccurrences(int[] arr) {

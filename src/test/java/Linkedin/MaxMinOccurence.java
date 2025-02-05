@@ -5,10 +5,10 @@ public class MaxMinOccurence {
 // output: m-1 and o-8
 
     public static void main(String[] args) {
-        maxMinCount();
+        maxMinOccurence();
     }
 
-    static void maxMinCount() {
+    static void maxMinOccurence() {
         int[] counter = new int[256];
         for (char c : "TeeeessstAutooooooomationn".toCharArray()) {
             counter[c]++;
@@ -29,7 +29,6 @@ public class MaxMinOccurence {
                 minChar = (char) i;
             }
         }
-
         System.out.println(maxChar + ": " + maxCount);
         System.out.println(minChar + ": " + minCount);
     }
