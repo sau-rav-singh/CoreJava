@@ -1,16 +1,11 @@
 package Linkedin;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class LongestUniqueCharSubstring {
     //Time Complexity: O(n)
     //Space Complexity: O(min(n, m))
-    public static int lengthOfLongestUniqueCharSubstring(String s) {
-        return longestSubStrWithoutRepetition(s).length();
-    }
-
     static String longestSubStrWithoutRepetition(String str) {
         Set<Character> hs = new HashSet<>();
         int j = 0;
@@ -34,8 +29,6 @@ public class LongestUniqueCharSubstring {
 
     public static void main(String[] args) {
         String s = "GEEKSFORGEEKS";
-        int length = lengthOfLongestUniqueCharSubstring(s);
-        System.out.println("Length of the longest substring: " + length);
         System.out.println(longestSubStrWithoutRepetition(s));
     }
 }
