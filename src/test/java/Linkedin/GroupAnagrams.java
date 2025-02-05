@@ -1,6 +1,8 @@
 package Linkedin;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class GroupAnagrams {
     public static void main(String[] args) {
@@ -11,9 +13,8 @@ public class GroupAnagrams {
         }
     }
 
-    public static List<List<String>> groupAnagrams(String[] strs) {
+    public static List<List<String>> groupAnagrams1(String[] strs) {
         List<List<String>> result = new ArrayList<>();
-        boolean[] grouped = new boolean[strs.length];
         String[] sortedStrings = new String[strs.length];
 
         for (int i = 0; i < strs.length; i++) {
@@ -23,31 +24,47 @@ public class GroupAnagrams {
         }
 
         for (int i = 0; i < strs.length; i++) {
-            if (grouped[i]) continue;
+            if (strs[i] == null) continue;
             List<String> group = new ArrayList<>();
             group.add(strs[i]);
+
             for (int j = i + 1; j < strs.length; j++) {
-                if (!grouped[j] && sortedStrings[i].equals(sortedStrings[j])) {
+                if (strs[j] != null && sortedStrings[i].equals(sortedStrings[j])) {
                     group.add(strs[j]);
-                    grouped[j] = true;
+                    strs[j] = null;
                 }
             }
             result.add(group);
+            strs[i] = null;
         }
         return result;
     }
-    public static List<List<String>> groupAnagramsWithMap(String[] strs) {
-        Map<String, List<String>> anagramMap = new HashMap<>();
-        for (String str : strs) {
-            String sortedStr = sortString(str);
-            anagramMap.putIfAbsent(sortedStr, new ArrayList<>());
-            anagramMap.get(sortedStr).add(str);
+
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> result = new ArrayList<>();
+        boolean[] isGrouped = new boolean[strs.length];
+        for (int i = 0; i < strs.length; i++) {
+            List<String> subList = new ArrayList<>();
+            if (!isGrouped[i]) {
+                subList.add(strs[i]);
+                for (int j = i + 1; j < strs.length; j++) {
+                    if (areAnagrams(strs[i], strs[j])) {
+                        subList.add(strs[j]);
+                        isGrouped[j] = true;
+                    }
+                }
+            }
+            if (!subList.isEmpty())
+                result.add(subList);
         }
-        return new ArrayList<>(anagramMap.values());
+        return result;
     }
-    public static String sortString(String str) {
-        char[] arr = str.toCharArray();
-        Arrays.sort(arr);
-        return String.valueOf(arr);
+
+    static boolean areAnagrams(String s1, String s2) {
+        char[] a1 = s1.toCharArray();
+        char[] a2 = s2.toCharArray();
+        Arrays.sort(a1);
+        Arrays.sort(a2);
+        return Arrays.equals(a1, a2);
     }
 }
