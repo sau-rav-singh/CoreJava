@@ -1,80 +1,50 @@
 package Linkedin;
 
 import org.testng.annotations.Test;
-
-import java.util.Arrays;
-
 import static org.testng.Assert.assertEquals;
 
 public class MoveNegativesTest {
 
     @Test
-    public void testMoveNegatives_basicCase() {
-        int[] nums = {1, 3, -1, -2, -3, 5, 6, -7};
-        moveNegatives(nums);
-        int[] expected = {-1, -2, -3, -7, 1, 3, 5, 6};
-        assertEquals(nums, expected);
-    }
+    public void testMoveNegatives() {
+        int[] nums1 = {1, 3, -1, -2, -3, 5, 6, -7};
+        moveNegatives(nums1);
+        assertEquals(nums1, new int[]{-1, -2, -3, -7, 1, 3, 5, 6}, "Test Case 1 Failed");
 
-    @Test
-    public void testMoveNegatives_allNegatives() {
-        int[] nums = {-5, -3, -1, -2, -4};
-        moveNegatives(nums);
-        int[] expected = {-5, -3, -1, -2, -4};
-        assertEquals(nums, expected);
-    }
+        int[] nums2 = {-5, -3, -1, -2, -4};
+        moveNegatives(nums2);
+        assertEquals(nums2, new int[]{-5, -3, -1, -2, -4}, "Test Case 2 Failed");
 
-    @Test
-    public void testMoveNegatives_noNegatives() {
-        int[] nums = {1, 2, 3, 4, 5};
-        moveNegatives(nums);
-        int[] expected = {1, 2, 3, 4, 5};
-        assertEquals(nums, expected);
-    }
+        int[] nums3 = {1, 2, 3, 4, 5};
+        moveNegatives(nums3);
+        assertEquals(nums3, new int[]{1, 2, 3, 4, 5}, "Test Case 3 Failed");
 
-    @Test
-    public void testMoveNegatives_singleNegative() {
-        int[] nums = {-1};
-        moveNegatives(nums);
-        int[] expected = {-1};
-        assertEquals(nums, expected);
-    }
+        int[] nums4 = {-1};
+        moveNegatives(nums4);
+        assertEquals(nums4, new int[]{-1}, "Test Case 4 Failed");
 
-    @Test
-    public void testMoveNegatives_emptyArray() {
-        int[] nums = {};
-        moveNegatives(nums);
-        int[] expected = {};
-        assertEquals(nums, expected);
-    }
+        int[] nums5 = {};
+        moveNegatives(nums5);
+        assertEquals(nums5, new int[]{}, "Test Case 5 Failed");
 
-    @Test
-    public void testMoveNegatives_singlePositive() {
-        int[] nums = {1};
-        moveNegatives(nums);
-        int[] expected = {1};
-        assertEquals(nums, expected);
-    }
+        int[] nums6 = {1};
+        moveNegatives(nums6);
+        assertEquals(nums6, new int[]{1}, "Test Case 6 Failed");
 
-    @Test
-    public void testMoveNegatives_mixedStart() {
-        int[] nums = {-1, 1, -2, 2, -3, 3};
-        moveNegatives(nums);
-        int[] expected = {-1, -2, -3, 1, 2, 3};
-        assertEquals(nums, expected);
+        int[] nums7 = {-1, 1, -2, 2, -3, 3};
+        moveNegatives(nums7);
+        assertEquals(nums7, new int[]{-1, -2, -3, 1, 2, 3}, "Test Case 7 Failed");
     }
-
 
     private void moveNegatives(int[] nums) {
-        int i=0,j=0;
-        for(;j<nums.length;j++){
-            if(nums[j]<0){
-                int temp=nums[j];
-                nums[j]=nums[i];
-                nums[i]=temp;
-                i++;
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 0) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                j++;
             }
         }
-        System.out.println(Arrays.toString(nums));
     }
 }
