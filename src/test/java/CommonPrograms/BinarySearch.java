@@ -37,4 +37,3 @@ public class BinarySearch {
         return -1; // Element not found
     }
 }
-

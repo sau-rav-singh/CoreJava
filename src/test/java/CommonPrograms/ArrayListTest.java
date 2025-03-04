@@ -1,10 +1,8 @@
 package CommonPrograms;
-//Remove duplicate chars from arraylist of strings
-
 import java.util.Arrays;
 
+//Remove duplicate chars from arraylist of strings
 public class ArrayListTest {
-
     public static void main(String[] args) {
         String[] words = {"hello", "helloishi", "mastercard"};
         String[] result = new String[words.length];
