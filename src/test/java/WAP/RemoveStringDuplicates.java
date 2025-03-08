@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class RemoveStringDuplicates {
     public static String removeDuplicates(String str) {

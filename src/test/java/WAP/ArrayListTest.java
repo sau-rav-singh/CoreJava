@@ -1,4 +1,4 @@
-package CommonPrograms;
+package WAP;
 import java.util.Arrays;
 
 //Remove duplicate chars from arraylist of strings

@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class PairSumOfSortedArray {
     public static void main(String[] args) {

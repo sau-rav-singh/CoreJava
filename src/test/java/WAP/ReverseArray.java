@@ -1,4 +1,4 @@
-package CommonPrograms;
+package WAP;
 
 public class ReverseArray {
     public static void main(String[] args) {

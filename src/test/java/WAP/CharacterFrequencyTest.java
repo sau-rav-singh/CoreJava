@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class CharacterFrequencyTest {
     //t:O(n),s:O(1)

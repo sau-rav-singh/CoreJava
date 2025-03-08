@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class TrappedRainWater {
     public static void main(String[] args) {

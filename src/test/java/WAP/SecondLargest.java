@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class SecondLargest {
     //Time Complexity: O(n)

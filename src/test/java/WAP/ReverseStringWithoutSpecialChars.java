@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class ReverseStringWithoutSpecialChars {
     //Time Complexity: O(n)

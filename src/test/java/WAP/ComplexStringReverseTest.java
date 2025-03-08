@@ -1,4 +1,4 @@
-package CommonPrograms;
+package WAP;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

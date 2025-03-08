@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class Factorial {
     //S/T:n

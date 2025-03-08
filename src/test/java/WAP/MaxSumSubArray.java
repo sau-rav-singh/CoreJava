@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class MaxSumSubArray {
     //find the max sum of contiguous subarrays in an array of integers

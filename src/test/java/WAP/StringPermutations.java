@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 import java.util.HashSet;
 import java.util.Set;

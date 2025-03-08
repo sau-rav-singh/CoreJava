@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 public class CharsRepeatedTwice {
     public static void main(String[] args) {

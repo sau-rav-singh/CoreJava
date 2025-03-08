@@ -1,4 +1,4 @@
-package CommonPrograms;
+package WAP;
 
 public class SortCharArray {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package CommonPrograms;
+package WAP;
 
 //Segregate Zeroes at last
 public class SegrigateZeroAtLast {

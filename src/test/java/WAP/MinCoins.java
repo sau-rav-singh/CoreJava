@@ -1,4 +1,4 @@
-package Linkedin;
+package WAP;
 
 import org.testng.Assert;
 
