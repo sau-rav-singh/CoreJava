@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 import java.util.ArrayList;
 import java.util.Arrays;

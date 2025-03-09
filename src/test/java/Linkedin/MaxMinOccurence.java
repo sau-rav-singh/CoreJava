@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 public class MaxMinOccurence {
 //Get max and min occurrences of given String: Teeeessst Autoooooomationn

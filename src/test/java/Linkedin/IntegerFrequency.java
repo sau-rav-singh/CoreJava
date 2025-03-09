@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 public class IntegerFrequency {
     //Time:O(n2)

@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 public class ReverseString {
 //𝐈𝐧𝐩𝐮𝐭:

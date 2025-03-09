@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 public class StringCompression {
     //string concatination :

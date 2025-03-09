@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 public class SortCharArray {
     public static void main(String[] args) {

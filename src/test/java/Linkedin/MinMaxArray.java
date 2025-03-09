@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 public class MinMaxArray {
     public static void findMinMax(int[] arr) {

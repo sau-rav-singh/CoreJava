@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 import org.testng.Assert;
 import java.util.HashMap;

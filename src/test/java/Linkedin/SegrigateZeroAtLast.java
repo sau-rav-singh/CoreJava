@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 //Segregate Zeroes at last
 public class SegrigateZeroAtLast {

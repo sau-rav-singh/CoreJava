@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 public class LinkedListDeleteAllChar {
     //Write a Program to create a linked list with following inputs and Delete all occurrences of a given key in a linked list.

@@ -1,4 +1,4 @@
-package WAP;
+package Linkedin;
 
 public class SecondMostFrequentChar {
     public static void main(String[] args) {
