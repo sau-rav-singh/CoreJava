@@ -1,4 +1,4 @@
-package Algorithms.Search;
+package DSA.Algorithms.Search;
 
 public class BinarySearch {
 //t:logn

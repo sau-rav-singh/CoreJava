@@ -1,12 +1,10 @@
 package LeetCode;
 
-import org.testng.Assert;
-
 public class FirstOccurence {
     //Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 
     public static void main(String[] args) {
-        Assert.assertEquals(strStr("sadbutsad","sad"),0);
+        System.out.println(strStr("sadbutsad","sad")==0);
     }
 
     public static int strStr(String haystack, String needle) {
