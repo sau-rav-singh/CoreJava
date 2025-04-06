@@ -1,6 +1,6 @@
-package DataStructure.Stack;
+package DSA.DataStructure.Stack;
 
-import DataStructure.LinkedList.Node;
+import DSA.DataStructure.LinkedList.Node;
 import lombok.Getter;
 
 @Getter

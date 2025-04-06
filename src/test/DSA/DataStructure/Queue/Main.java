@@ -1,4 +1,4 @@
-package DataStructure.Queue;
+package DSA.DataStructure.Queue;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package DataStructure.LinkedList;
+package DSA.DataStructure.LinkedList;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package DataStructure.LinkedList;
+package DSA.DataStructure.LinkedList;
 
 import lombok.Getter;
 
@@ -155,6 +155,24 @@ public class LinkedList {
             temp.next = prev;
             prev = temp;
             temp = next;
+        }
+    }
+    public void deleteDuplicates() {
+        if (head == null) {
+            return;
+        }
+
+        Node current = head;
+        while (current.next != null) {
+            if (current.value == current.next.value) {
+                current.next = current.next.next;
+                length--;
+                if(current.next == null) {
+                    tail = current;
+                }
+            } else {
+                current = current.next;
+            }
         }
     }
 }

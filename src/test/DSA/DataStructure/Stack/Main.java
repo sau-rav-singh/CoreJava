@@ -1,4 +1,6 @@
-package DataStructure.Stack;
+package DSA.DataStructure.Stack;
+
+import DSA.DataStructure.Stack.Stack;
 
 public class Main {
     public static void main(String[] args) {

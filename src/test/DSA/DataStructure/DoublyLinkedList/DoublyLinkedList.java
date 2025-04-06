@@ -1,4 +1,4 @@
-package DataStructure.DoublyLinkedList;
+package DSA.DataStructure.DoublyLinkedList;
 
 import lombok.Getter;
 

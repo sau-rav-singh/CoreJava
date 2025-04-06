@@ -1,6 +1,6 @@
-package DataStructure.Queue;
+package DSA.DataStructure.Queue;
 
-import DataStructure.LinkedList.Node;
+import DSA.DataStructure.LinkedList.Node;
 import lombok.Getter;
 
 @Getter

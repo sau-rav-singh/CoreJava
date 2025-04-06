@@ -1,4 +1,4 @@
-package DataStructure.DoublyLinkedList;
+package DSA.DataStructure.DoublyLinkedList;
 
 public class Node {
     int value;
