@@ -3,6 +3,7 @@ name: Run TestNG Tests Periodically
 on:
   schedule:
     - cron: "0 */18 * * *"
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
   run-tests:
