@@ -10,10 +10,9 @@ import java.util.Properties;
 public class SendEmailTest {
    @Test
    public void sendEmail() {
-        final String senderEmail = "myjavamail27@gmail.com";
+        final String senderEmail = PasswordUtils.decodePassword("bXlqYXZhbWFpbDI3QGdtYWlsLmNvbQ==");
         final String appPassword = PasswordUtils.decodePassword("cWZjZXJhbnptcHNqdmJ2bg==");
-        //final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
-        final String recipientEmail ="myjavamail27@gmail.com";
+        final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
         final String emailSubject = "Please Stop Spam";
         final String emailBody = "Hello Aditi, \n\nThis is an automated email. I have emailed you several times to stop spamming me. Please stop your spam, else i will also spam you with my automated emails daily. \n\n Regards,\n Koi Nahi";
 
