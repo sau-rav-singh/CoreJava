@@ -1,0 +1,18 @@
+name: Run TestNG Tests Periodically
+
+on:
+  schedule:
+    - cron: "0 */18 * * *"
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run TestNG Tests
+        uses: docker://maven:3.9.4-eclipse-temurin-17
+        with:
+          args: mvn test -Dsurefire.suiteXmlFiles=testng.xml

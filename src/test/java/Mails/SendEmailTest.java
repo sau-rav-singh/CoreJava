@@ -3,15 +3,19 @@ package Mails;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import org.testng.annotations.Test;
+
 import java.util.Properties;
 
-public class SendEmail {
-    public static void main(String[] args) {
+public class SendEmailTest {
+   @Test
+   public void sendEmail() {
         final String senderEmail = "myjavamail27@gmail.com";
         final String appPassword = PasswordUtils.decodePassword("cWZjZXJhbnptcHNqdmJ2bg==");
-        final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
+        //final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
+        final String recipientEmail ="myjavamail27@gmail.com";
         final String emailSubject = "Please Stop Spam";
-        final String emailBody = "Hello \n\nThis is a test email from Java. Please stop your spam, else i will also spam you. \n\n Regards,\n Koi Nahi";
+        final String emailBody = "Hello Aditi, \n\nThis is an automated email. I have emailed you several times to stop spamming me. Please stop your spam, else i will also spam you with my automated emails daily. \n\n Regards,\n Koi Nahi";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", "true");
@@ -39,5 +43,4 @@ public class SendEmail {
             e.printStackTrace();
         }
     }
-
 }
