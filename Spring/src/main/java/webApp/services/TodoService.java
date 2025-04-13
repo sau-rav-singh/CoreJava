@@ -1,11 +1,13 @@
 package webApp.services;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 import webApp.todo.Todo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class TodoService {
@@ -13,9 +15,9 @@ public class TodoService {
     private static int todosCount = 0;
 
     static {
-        todos.add(new Todo(++todosCount, "in28minutes", "Learn Spring MVC", LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(++todosCount, "in28minutes", "Learn Struts", LocalDate.now().plusYears(2), false));
-        todos.add(new Todo(++todosCount, "in28minutes", "Learn Hibernate", LocalDate.now().plusYears(3), false));
+        todos.add(new Todo(++todosCount, "saurav", "Learn Spring MVC", LocalDate.now().plusYears(1), false));
+        todos.add(new Todo(++todosCount, "saurav", "Learn Struts", LocalDate.now().plusYears(2), false));
+        todos.add(new Todo(++todosCount, "saurav", "Learn Hibernate", LocalDate.now().plusYears(3), false));
         todos.add(new Todo(++todosCount, "in28minutes", "Learn Java", LocalDate.now().plusYears(4), false));
     }
 
@@ -28,6 +30,15 @@ public class TodoService {
     }
 
     public List<Todo> findByUsername(String username) {
-        return todos;
+        return todos.stream().filter(todo -> todo.getUsername().equalsIgnoreCase(username)).toList();
+    }
+
+    public Todo findById(Integer id) {
+        return todos.stream().filter(todo -> Objects.equals(todo.getId(), id)).findFirst().orElse(null);
+    }
+
+    public void updateTodo(@Valid Todo todo) {
+        deleteTodo(todo.getId());
+        todos.add(todo);
     }
 }
