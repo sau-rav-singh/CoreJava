@@ -1,20 +1,20 @@
 package Mails;
 
 import jakarta.mail.*;
-import jakarta.mail.internet.InternetAddress;
-import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.*;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.util.Properties;
 
 public class SendEmailTest {
-   @Test
-   public void sendEmail() {
+    @Test
+    public void sendEmailWithAttachment() {
         final String senderEmail = PasswordUtils.decodePassword("bXlqYXZhbWFpbDI3QGdtYWlsLmNvbQ==");
         final String appPassword = PasswordUtils.decodePassword("cWZjZXJhbnptcHNqdmJ2bg==");
         final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
         final String emailSubject = "Please Stop Spam";
-        final String emailBody = "Hello Aditi, \n\nThis is an automated email. I have emailed you several times to stop spamming me. Please stop your spam, else i will also spam you with my automated emails daily. \n\n Regards,\n Koi Nahi";
+        final String emailBody = "Hello Aditi, \n\nThis is an automated email with an attachment. Please check the attached file.\n\nRegards,\nKoi Nahi";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", "true");
@@ -33,12 +33,17 @@ public class SendEmailTest {
             message.setFrom(new InternetAddress(senderEmail));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
             message.setSubject(emailSubject);
-            message.setText(emailBody);
-
+            MimeBodyPart textBodyPart = new MimeBodyPart();
+            textBodyPart.setText(emailBody);
+            MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+            attachmentBodyPart.attachFile(new File("src/test/java/Mails/aditi.tar"));
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(textBodyPart);
+            multipart.addBodyPart(attachmentBodyPart);
+            message.setContent(multipart);
             Transport.send(message);
-            System.out.println("Email Sent Successfully ***");
-
-        } catch (MessagingException e) {
+            System.out.println("Email Sent Successfully with Attachment ***");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
