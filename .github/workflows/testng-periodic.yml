@@ -1,10 +1,10 @@
 name: Run TestNG Tests Periodically
 
-on:
-  schedule:
-    - cron: "0 */3 * * *" # Runs every 3 hours
-    - cron: "30 1-23/3 * * *" # Runs 90 minutes after the first
-  workflow_dispatch: # Allows manual triggering
+#on:
+#  schedule:
+#    - cron: "0 */3 * * *" # Runs every 3 hours
+#    - cron: "30 1-23/3 * * *" # Runs 90 minutes after the first
+#  workflow_dispatch: # Allows manual triggering
 
 jobs:
   run-tests:
