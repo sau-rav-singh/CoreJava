@@ -16,7 +16,7 @@ public class PasswordUtils {
     }
 
     public static void main(String[] args) {
-        String password = "myjavamail27@gmail.com";
+        String password = "";
 
         String hashedPassword = encodePassword(password);
         System.out.println("Hashed Password: " + hashedPassword);

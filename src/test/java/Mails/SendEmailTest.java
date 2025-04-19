@@ -15,9 +15,9 @@ import java.util.Random;
 public class SendEmailTest {
     @Test
     public void sendEmailWithAttachment() {
-        final String senderEmail = PasswordUtils.decodePassword("bXlqYXZhbWFpbDI3QGdtYWlsLmNvbQ==");
-        final String appPassword = PasswordUtils.decodePassword("cWZjZXJhbnptcHNqdmJ2bg==");
-        final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
+        final String senderEmail = PasswordUtils.decodePassword("");
+        final String appPassword = PasswordUtils.decodePassword("");
+        final String recipientEmail = PasswordUtils.decodePassword("");
         final String emailSubject = "Please Stop Spam";
         List<String> emailBodies = List.of(
                 "Hello Aditi,\n\nThis is an automated email. Please stop spamming me.\n\nRegards,\nKoi Nahi",
@@ -48,7 +48,7 @@ public class SendEmailTest {
             MimeBodyPart textBodyPart = new MimeBodyPart();
             textBodyPart.setText(emailBody);
             MimeBodyPart attachmentBodyPart = new MimeBodyPart();
-            attachmentBodyPart.attachFile(new File("src/test/java/Mails/aditi.tar"));
+            attachmentBodyPart.attachFile(new File("src/test/java/Mails/attachment.tar"));
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(textBodyPart);
             multipart.addBodyPart(attachmentBodyPart);
