@@ -50,7 +50,7 @@ public class StudentHibernateTest {
             Transaction transaction = session.beginTransaction();
             Student stu = new Student(
                     rno != null ? ++rno : faker.number().numberBetween(0, 2),
-                    faker.funnyName().name(),
+                    faker.harryPotter().character(),
                     faker.number().numberBetween(3, 18)
             );
             session.persist(stu);
