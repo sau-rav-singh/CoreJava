@@ -1,32 +1,20 @@
 package Mails;
 
 import jakarta.mail.*;
-import jakarta.mail.internet.InternetAddress;
-import jakarta.mail.internet.MimeBodyPart;
-import jakarta.mail.internet.MimeMessage;
-import jakarta.mail.internet.MimeMultipart;
+import jakarta.mail.internet.*;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.util.List;
 import java.util.Properties;
-import java.util.Random;
 
 public class SendEmailTest {
     @Test
     public void sendEmailWithAttachment() {
-        final String senderEmail = PasswordUtils.decodePassword("");
-        final String appPassword = PasswordUtils.decodePassword("");
-        final String recipientEmail = PasswordUtils.decodePassword("");
+        final String senderEmail = PasswordUtils.decodePassword("bXlqYXZhbWFpbDI3QGdtYWlsLmNvbQ==");
+        final String appPassword = PasswordUtils.decodePassword("cWZjZXJhbnptcHNqdmJ2bg==");
+        final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
         final String emailSubject = "Please Stop Spam";
-        List<String> emailBodies = List.of(
-                "Hello Aditi,\n\nThis is an automated email. Please stop spamming me.\n\nRegards,\nKoi Nahi",
-                "Hi Aditi,\n\nI kindly request you to stop sending spam emails. Thank you.\n\nRegards,\nKoi Nahi",
-                "Dear Aditi,\n\nThis is a reminder to stop spamming. Please take action.\n\nRegards,\nKoi Nahi",
-                "Hello Aditi,\n\nYour spam emails are overwhelming. Please stop.\n\nRegards,\nKoi Nahi",
-                "Hi Aditi,\n\nThis is another attempt to ask you to stop spamming me.\n\nRegards,\nKoi Nahi"
-        );
-        String emailBody = emailBodies.get(new Random().nextInt(emailBodies.size()));
+        final String emailBody = "Hello Aditi, \n\nThis is an automated email with an attachment. Please check the attached file.\n\nRegards,\nKoi Nahi";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", "true");
@@ -48,7 +36,7 @@ public class SendEmailTest {
             MimeBodyPart textBodyPart = new MimeBodyPart();
             textBodyPart.setText(emailBody);
             MimeBodyPart attachmentBodyPart = new MimeBodyPart();
-            attachmentBodyPart.attachFile(new File("src/test/java/Mails/attachment.tar"));
+            attachmentBodyPart.attachFile(new File("src/test/java/Mails/aditi.tar"));
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(textBodyPart);
             multipart.addBodyPart(attachmentBodyPart);
@@ -56,7 +44,7 @@ public class SendEmailTest {
             Transport.send(message);
             System.out.println("Email Sent Successfully with Attachment ***");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }
