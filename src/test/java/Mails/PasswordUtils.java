@@ -17,11 +17,10 @@ public class PasswordUtils {
 
     public static void main(String[] args) {
         String password = "";
-
         String hashedPassword = encodePassword(password);
         System.out.println("Hashed Password: " + hashedPassword);
         String unhashedPassword = decodePassword(hashedPassword);
-
         boolean isPasswordValid = unhashedPassword.equals(password);
         System.out.println("Password is valid: " + isPasswordValid);
+       // System.out.println(decodePassword(""));
     }}
