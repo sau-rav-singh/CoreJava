@@ -14,7 +14,7 @@ public class SendEmailTest {
         final String appPassword = PasswordUtils.decodePassword("dGZkaiBva25xIG9sZWcgaHBpaA==");
         final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
         final String emailSubject = "Please Stop Spam";
-        final String emailBody = "Hello Aditi, \n\nThis is an automated email with an attachment. Please check the attached file.\n\nRegards,\nKoi Nahi";
+        final String emailBody = "Hello Aditi, \n\nThis is an automated email with an attachment. Please stop your spam emails post then i will also stop spamming you.\n\nRegards,\nKoi Nahi";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", "true");
