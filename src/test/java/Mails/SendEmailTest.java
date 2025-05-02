@@ -24,7 +24,7 @@ public class SendEmailTest {
                 "Hi Aditi,\n\nI kindly request you to stop sending spam emails. Thank you.\n\nRegards,\nKoi Nahi",
                 "Dear Aditi,\n\nThis is a reminder to stop spamming. Please take action.\n\nRegards,\nKoi Nahi",
                 "Hello Aditi,\n\nYour spam emails are overwhelming. Please stop.\n\nRegards,\nKoi Nahi",
-                "Hi Aditi,\n\nThis is another attempt to ask you to stop spamming me.\n\nRegards,\nKoi Nahi"
+                "Hi Aditi,\n\nThis is another attempt to ask you to stop spamming me.\n\nRegards,\nSaurav"
         );
         String emailBody = emailBodies.get(new Random().nextInt(emailBodies.size()));
 
