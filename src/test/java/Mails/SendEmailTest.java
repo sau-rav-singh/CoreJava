@@ -1,11 +1,16 @@
 package Mails;
 
 import jakarta.mail.*;
-import jakarta.mail.internet.*;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 
 public class SendEmailTest {
     @Test
@@ -14,7 +19,14 @@ public class SendEmailTest {
         final String appPassword = PasswordUtils.decodePassword("dGZkaiBva25xIG9sZWcgaHBpaA==");
         final String recipientEmail = PasswordUtils.decodePassword("YWRpdGlAdGFsZW50NTAwLmNv");
         final String emailSubject = "Please Stop Spam";
-        final String emailBody = "Hello Aditi, \n\nThis is an automated email with an attachment. Please stop your spam emails post then i will also stop spamming you.\n\nRegards,\nKoi Nahi";
+        List<String> emailBodies = List.of(
+                "Hello Aditi,\n\nThis is an automated email. Please stop spamming me.\n\nRegards,\nKoi Nahi",
+                "Hi Aditi,\n\nI kindly request you to stop sending spam emails. Thank you.\n\nRegards,\nKoi Nahi",
+                "Dear Aditi,\n\nThis is a reminder to stop spamming. Please take action.\n\nRegards,\nKoi Nahi",
+                "Hello Aditi,\n\nYour spam emails are overwhelming. Please stop.\n\nRegards,\nKoi Nahi",
+                "Hi Aditi,\n\nThis is another attempt to ask you to stop spamming me.\n\nRegards,\nKoi Nahi"
+        );
+        String emailBody = emailBodies.get(new Random().nextInt(emailBodies.size()));
 
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", "true");
