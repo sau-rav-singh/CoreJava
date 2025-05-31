@@ -1,0 +1,24 @@
+name: Run TestNG Tests Periodically
+
+on:
+  schedule:
+    - cron: "0 */3 * * *" # Runs every 3 hours
+    - cron: "30 1-23/3 * * *" # Runs 90 minutes after the first
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Run TestNG Tests
+        run: mvn test -Dsurefire.suiteXmlFiles=testng.xml
