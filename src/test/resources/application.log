@@ -1,0 +1,9 @@
+2023-10-27 14:30:01.123 [INFO]  - Application starting up...
+2023-10-27 14:30:01.173 [INFO]  - Database connection pool initialized with 10 connections.
+2023-10-27 14:30:01.273 [WARN]  - Configuration property 'api.key' is not set. Using default value.
+2023-10-27 14:30:01.423 [INFO]  - User 'admin' logged in successfully from IP 192.168.1.10.
+2023-10-27 14:30:01.823 [ERROR] - Failed to connect to payment gateway: Connection timed out after 3000ms.
+2023-10-27 14:30:01.873 [INFO]  - Processing user request #12345.
+2023-10-27 14:30:02.073 [WARN]  - Disk space is running low on /var/log. 85% used.
+2023-10-27 14:30:02.123 [ERROR] - NullPointerException at com.example.UserService.processUserData(UserService.java:112)
+2023-10-27 14:30:03.123 [INFO]  - Application shutting down gracefully.
