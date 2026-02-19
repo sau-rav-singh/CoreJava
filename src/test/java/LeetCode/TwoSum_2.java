@@ -4,7 +4,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum {
+public class TwoSum_2 {
+
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     */
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
