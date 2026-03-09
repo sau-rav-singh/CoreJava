@@ -24,5 +24,10 @@ public class Main {
             myList.printList();
         if (myList.insert(2, 9))
             myList.printList();
+        removedNode=myList.remove(2);
+        System.out.println("Removed Node: " + removedNode.value);
+        myList.printList();
+        myList.reverse();
+        myList.printList();
     }
 }
