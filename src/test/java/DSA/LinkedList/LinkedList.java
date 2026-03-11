@@ -60,6 +60,24 @@ public class LinkedList {
         return temp;
     }
 
+    public Node removeLast2() {
+        Node toBeRemoved = tail;
+        if (length == 0) return null;
+        if (length == 1) {
+            head = null;
+            tail = null;
+            length = 0;
+        } else {
+            Node temp = head;
+            while (temp.next != tail) {
+                temp = temp.next;
+            }
+            tail = temp;
+            length--;
+        }
+        return toBeRemoved;
+    }
+
     public void prepend(int value) {
         Node newNode = new Node(value);
         if (length == 0) {
@@ -136,17 +154,17 @@ public class LinkedList {
         return temp;
     }
 
-    public void reverse(){
-        Node temp=head;
-        head=tail;
-        tail=temp;
-        Node after=temp.next;
-        Node before=null;
-        for(int i=0;i<length;i++){
-            after=temp.next;
-            temp.next=before;
-            before=temp;
-            temp=after;
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
         }
         System.out.println("List reversed");
     }
