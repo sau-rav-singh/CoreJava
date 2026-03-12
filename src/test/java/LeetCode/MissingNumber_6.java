@@ -13,6 +13,11 @@ public class MissingNumber_6 {
         }
     }
 
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     */
+
     public static int missingNumber(int[] nums) {
         int len = nums.length;
         int sum = (len * (len + 1)) / 2;

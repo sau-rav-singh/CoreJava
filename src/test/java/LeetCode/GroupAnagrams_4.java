@@ -11,6 +11,11 @@ public class GroupAnagrams_4 {
         System.out.println(groupAnagramsOptimised(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
     }
 
+    /**
+     * Time Complexity: O(nlogn)
+     * Space Complexity: O(n)
+     */
+
     public static List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> result = new ArrayList<>();
         for (int i = 0; i < strs.length; i++) {
@@ -34,6 +39,11 @@ public class GroupAnagrams_4 {
         }
         return result;
     }
+
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     */
 
     public static List<List<String>> groupAnagramsOptimised(String[] strs) {
         Map<String, List<String>> anagramMap = new HashMap<>();

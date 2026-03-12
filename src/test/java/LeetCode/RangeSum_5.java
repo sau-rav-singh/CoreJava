@@ -7,6 +7,11 @@ public class RangeSum_5 {
     //Given an integer array nums, handle multiple queries of the following type:
     //Calculate the sum of the elements of nums between indices left and right inclusive where left <= right.
 
+    /*
+    Time Complexity: O(1)
+    Space Complexity: O(1)
+     */
+
     static class NumArray {
         private final int[] prefixSums;
 
