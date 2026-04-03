@@ -29,5 +29,7 @@ public class Main {
         myList.printList();
         myList.reverse();
         myList.printList();
+        LinkedList.Node middleNode = myList.findMiddleNode();
+        System.out.println("Middle Node: " + middleNode.value);
     }
 }
