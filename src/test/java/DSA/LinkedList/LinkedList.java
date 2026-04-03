@@ -163,8 +163,8 @@ public class LinkedList {
         System.out.println("Length: " + length);
     }
 
-    public Node findMiddleNode(){
-        Node slow=head,fast=head;
+    public Node findMiddleNode() {
+        Node slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
