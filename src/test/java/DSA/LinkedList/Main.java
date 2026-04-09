@@ -24,12 +24,14 @@ public class Main {
             myList.printList();
         if (myList.insert(2, 9))
             myList.printList();
-        removedNode=myList.remove(2);
+        removedNode = myList.remove(2);
         System.out.println("Removed Node: " + removedNode.value);
         myList.printList();
         myList.reverse();
         myList.printList();
         LinkedList.Node middleNode = myList.findMiddleNode();
         System.out.println("Middle Node: " + middleNode.value);
+        System.out.println("Has Loop: " + myList.hasLoop());
+        System.out.println(myList.findKthFromEnd(3).value);
     }
 }

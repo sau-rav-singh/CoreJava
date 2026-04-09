@@ -171,4 +171,38 @@ public class LinkedList {
         }
         return slow;
     }
+
+    public boolean hasLoop() {
+        Node slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Node findKthFromEnd(int k) {
+        if (k <= 0) {
+            return null;
+        }
+        Node fast = head;
+        Node slow = head;
+        // Move fast pointer k steps ahead
+        for (int i = 0; i < k; i++) {
+            // If fast becomes null before we reach k, k > list length
+            if (fast == null) {
+                return null;
+            }
+            fast = fast.next;
+        }
+        // Move both pointers until fast reaches the end
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
 }

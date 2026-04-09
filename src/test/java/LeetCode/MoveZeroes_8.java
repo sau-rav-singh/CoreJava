@@ -21,9 +21,11 @@ public class MoveZeroes_8 {
 
         for (int fast = 0; fast < nums.length; fast++) {
             if (nums[fast] != 0) {
-                int temp = nums[fast];
-                nums[fast] = nums[slow];
-                nums[slow] = temp;
+                if (fast != slow) {
+                    int temp = nums[fast];
+                    nums[fast] = nums[slow];
+                    nums[slow] = temp;
+                }
                 slow++;
             }
         }
