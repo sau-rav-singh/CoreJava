@@ -13,27 +13,27 @@ public class SortedSquares_11 {
     }
 
     public static int[] sortedSquares(int[] nums) {
-        int n = nums.length;
-        int[] result = new int[n];
+        int length = nums.length;
+        int[] squares = new int[length];
 
         int left = 0;
-        int right = n - 1;
-        int p = n - 1;
+        int right = length - 1;
+        int p = length - 1;
 
         while (left <= right) {
             int leftSquare = nums[left] * nums[left];
             int rightSquare = nums[right] * nums[right];
 
             if (leftSquare > rightSquare) {
-                result[p] = leftSquare;
+                squares[p] = leftSquare;
                 left++;
             } else {
-                result[p] = rightSquare;
+                squares[p] = rightSquare;
                 right--;
             }
             p--;
         }
 
-        return result;
+        return squares;
     }
 }
