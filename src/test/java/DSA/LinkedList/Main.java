@@ -33,5 +33,7 @@ public class Main {
         System.out.println("Middle Node: " + middleNode.value);
         System.out.println("Has Loop: " + myList.hasLoop());
         System.out.println(myList.findKthFromEnd(3).value);
+        myList.removeDuplicates();
+        myList.printList();
     }
 }

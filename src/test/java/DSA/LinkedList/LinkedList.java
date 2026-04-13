@@ -1,5 +1,7 @@
 package DSA.LinkedList;
 
+import java.util.HashSet;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -204,5 +206,26 @@ public class LinkedList {
             fast = fast.next;
         }
         return slow;
+    }
+
+    public void removeDuplicates() {
+        if (head == null) {
+            return;
+        }
+
+        HashSet<Integer> seenValues = new HashSet<>();
+
+        Node current = head;
+        Node previous = null;
+
+        while (current != null) {
+            if (seenValues.contains(current.value)) {
+                previous.next = current.next;
+            } else {
+                seenValues.add(current.value);
+                previous = current;
+            }
+            current = current.next;
+        }
     }
 }
