@@ -212,12 +212,9 @@ public class LinkedList {
         if (head == null) {
             return;
         }
-
         HashSet<Integer> seenValues = new HashSet<>();
-
         Node current = head;
         Node previous = null;
-
         while (current != null) {
             if (seenValues.contains(current.value)) {
                 previous.next = current.next;
