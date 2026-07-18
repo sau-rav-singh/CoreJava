@@ -21,18 +21,31 @@ public class MyStack {
     }
 
     public void getTop() {
-        System.out.println("Top: "+this.top.value);
+        System.out.println("Top Value is: "+this.top.value);
     }
 
     public void getHeight() {
-        System.out.println("Height: "+this.height);
+        System.out.println("Height of the stack is: "+this.height);
     }
 
     public void printStack(){
+        System.out.println("----------------------");
         Node temp = this.top;
         while(temp != null) {
-            System.out.println(temp.value);
+            System.out.println("Stack Value: "+temp.value);
             temp = temp.next;
         }
+        System.out.println("----------------------");
+    }
+
+    public void push(int value) {
+        Node newNode = new Node(value);
+        if(height == 0) {
+            this.top = newNode;
+        } else {
+            newNode.next = this.top;
+            this.top = newNode;
+        }
+        this.height++;
     }
 }
