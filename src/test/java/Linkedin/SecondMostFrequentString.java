@@ -14,6 +14,7 @@ public class SecondMostFrequentString {
                 frequencyMap.put(word, frequencyMap.getOrDefault(word, 0) + 1);
             }
         }
+        frequencyMap.forEach((word, frequency) -> System.out.println(word + ": " + frequency));
         String secondMostFrequent = getSecondMostFrequent(frequencyMap);
         System.out.println("Second most frequent string: " + secondMostFrequent);
     }
