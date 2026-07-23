@@ -1,9 +1,9 @@
 package Linkedin;
 
 public class StringCompression {
-    //string concatination :
-    // Input: aaabbbacfwww
-    // Output: a3b3acfw3
+    // QUESTION: Given a string, compress it by replacing consecutive repeating characters with
+    // the character followed by its count. If a character appears only once, don't add a count.
+    // Example: Input: "aaabbbacfwww" -> Output: "a3b3acfw3"
     //Time Complexity: O(n)
     //Space Complexity: O(n)
 

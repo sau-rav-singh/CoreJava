@@ -4,6 +4,9 @@ import org.testng.Assert;
 
 import java.util.Arrays;
 
+// QUESTION: Given a sorted array of integers, remove the duplicates in-place such that each element
+// appears only once. Return the array after removing duplicates.
+// Example: Input: [1, 1, 2, 3, 4, 4, 4, 5] -> Output: [1, 2, 3, 4, 5]
 public class RemoveDuplicates {
     public static void main(String[] args) {
         int[] arr = {1, 1, 2, 3, 4, 4, 4, 5};

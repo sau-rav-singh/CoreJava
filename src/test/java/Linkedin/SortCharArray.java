@@ -1,6 +1,8 @@
 package Linkedin;
 
 public class SortCharArray {
+    // QUESTION: Given a string, sort its characters in ascending order.
+    // Example: Input: "saurav" -> Output: "aarsuv"
     public static void main(String[] args) {
         String input = "saurav";
         char[] arr = input.toCharArray();

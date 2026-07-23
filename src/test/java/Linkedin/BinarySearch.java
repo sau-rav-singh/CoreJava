@@ -2,6 +2,10 @@ package Linkedin;
 
 import java.util.Arrays;
 
+// QUESTION: Implement binary search to find a target element in a sorted array.
+// Return the index if found, otherwise return -1.
+// Example: Input: [2, 5, 6, 7, 9], target: 7 -> Output: 3
+//          Input: [2, 5, 6, 7, 9], target: 8 -> Output: -1
 public class BinarySearch {
     public static void main(String[] args) {
         int[] arr = {5, 6, 7, 9, 2};

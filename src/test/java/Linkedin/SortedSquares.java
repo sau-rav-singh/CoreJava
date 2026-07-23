@@ -3,6 +3,9 @@ package Linkedin;
 import java.util.Arrays;
 
 public class SortedSquares {
+    // QUESTION: Given a sorted array of integers (may contain negative numbers), return an array
+    // of the squares of each number sorted in non-decreasing order.
+    // Example: Input: [-7, -3, 2, 3, 11] -> Output: [4, 9, 9, 49, 121]
     //t:s:n
     public static void main(String[] args) {
         int[] nums = {-7, -3, 2, 3, 11};

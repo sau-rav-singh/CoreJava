@@ -3,6 +3,9 @@ package Linkedin;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
+// QUESTION: Given an array of integers, move all negative numbers to the beginning of the array
+// while maintaining the relative order among the positive numbers is not required.
+// Example: Input: [1, 3, -1, -2, -3, 5, 6, -7] -> Output: [-1, -2, -3, -7, 1, 3, 5, 6]
 public class MoveNegativesTest {
 
     @Test

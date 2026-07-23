@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+// QUESTION: Given a string, reverse it while maintaining the original positions of spaces.
+// Example: Input: "this is a phone" -> Output: "enoh pa s isiht"
 public class ComplexStringReverseTest {
 
     @Test

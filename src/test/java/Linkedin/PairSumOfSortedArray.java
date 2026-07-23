@@ -1,5 +1,8 @@
 package Linkedin;
 
+// QUESTION: Given a sorted array of integers and a target sum, find if there exists a pair of elements
+// in the array that sum to the target. Return the pair if found.
+// Example: Input: [1, 2, 3, 4, 5, 6], target = 8 -> Output: (2, 6) or (3, 5)
 public class PairSumOfSortedArray {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6};

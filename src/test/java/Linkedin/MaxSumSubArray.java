@@ -1,7 +1,8 @@
 package Linkedin;
 
 public class MaxSumSubArray {
-    //find the max sum of contiguous subarrays in an array of integers
+    // QUESTION: Given an array of integers, find the maximum sum of any contiguous subarray.
+    // Example: Input: [1, 12, -5, -6, 50, 3] -> Output: 55 (12 + (-5) + (-6) + 50 + 3)
     public static void main(String[] args) {
         int[] arr = {1, 12, -5, -6, 50, 3};
         int maxSum = Integer.MIN_VALUE;

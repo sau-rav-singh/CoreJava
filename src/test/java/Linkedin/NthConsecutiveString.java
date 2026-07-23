@@ -1,7 +1,8 @@
 package Linkedin;
 
 public class NthConsecutiveString {
-
+    // QUESTION: Given a string, find the character that appears consecutively the maximum number of times.
+    // Example: Input: "Amazon is a great company as it has Atooozzzz" -> Output: 'z'
     public static void main(String[] args) {
         String word = "Amazon is a great company as it has Atooozzzz";
         System.out.println(maxRepeating(word));

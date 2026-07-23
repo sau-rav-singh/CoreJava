@@ -9,6 +9,9 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class SortStringCharsTest {
+    // QUESTION: Given a string, sort its characters based on their frequency in descending order.
+    // If characters have the same frequency, maintain their original order.
+    // Example: Input: "Aabb" -> Output: "bbAa" (b:2, A:1, a:1)
     public static String sortStrings(String s) {
         int[] freq = new int[256]; // Covers all ASCII characters
         for (char c : s.toCharArray()) {

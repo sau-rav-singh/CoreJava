@@ -1,10 +1,8 @@
 package Linkedin;
 
 public class ReverseString {
-//𝐈𝐧𝐩𝐮𝐭:
-//"India is my country"
-//𝐎𝐮𝐭𝐩𝐮𝐭:
-//"yrtnuoc ym si aidnI"
+// QUESTION: Given a string, reverse each word in the string while maintaining the original order of words.
+// Example: Input: "India is my country" -> Output: "aidnI si ym yrtnuoc"
     public static void main(String[] args) {
         //Space/Time: O(n*m)
         String str="India is my country";

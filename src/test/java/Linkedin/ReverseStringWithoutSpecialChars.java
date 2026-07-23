@@ -1,6 +1,9 @@
 package Linkedin;
 
 public class ReverseStringWithoutSpecialChars {
+    // QUESTION: Given a string containing alphabetic characters and special characters, reverse only
+    // the alphabetic characters while keeping the special characters in their original positions.
+    // Example: Input: "a!b?c" -> Output: "c?b!a"
     //Time Complexity: O(n)
     //Space Complexity: O(n)
     public static String reverseString(String str) {

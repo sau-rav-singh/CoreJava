@@ -3,6 +3,11 @@ package Linkedin;
 import java.util.Stack;
 
 public class ValidBrackets {
+    // QUESTION: Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
+    // determine if the input string is valid. An input string is valid if open brackets are closed
+    // by the same type of brackets and in the correct order.
+    // Example: Input: "()[]{}" -> Output: true
+    //          Input: "({[]})" -> Output: true
     //Space/Time Complexity: O(n)
 
     public static void main(String[] args) {

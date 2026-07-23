@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class SortHashMapByValue {
+    // QUESTION: Given a HashMap, sort it by its values in both ascending and descending order.
+    // Example: Input: {apple=10, banana=5, cherry=15, date=2, elderberry=10}
+    //          Output (ascending): {date=2, banana=5, apple=10, elderberry=10, cherry=15}
 
     public static void main(String[] args) {
         HashMap<String, Integer> unsortedMap = new HashMap<>();

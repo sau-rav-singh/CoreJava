@@ -3,6 +3,9 @@ package Linkedin;
 import java.util.*;
 
 public class SortMapByValue {
+    // QUESTION: Given a Map, sort it by its values in descending order.
+    // Example: Input: {apple=10, banana=5, orange=15, grape=8}
+    //          Output: {orange=15, apple=10, grape=8, banana=5}
 
         public static void main(String[] args) {
             Map<String, Integer> map = new HashMap<>();

@@ -2,6 +2,9 @@ package Linkedin;
 
 import java.util.Arrays;
 
+// QUESTION: Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+// A permutation of a string is any rearrangement of its characters.
+// Example: Input: s1 = "ab", s2 = "eidbaooo" -> Output: true (s2 contains "ba" which is a permutation of "ab")
 public class PermutationInString {
     public static void main(String[] args) {
         String s1 = "ab", s2 = "eidbaooo";

@@ -2,6 +2,11 @@ package Linkedin;
 
 import java.util.Arrays;
 
+// QUESTION: Given two strings, write a function to determine if they are anagrams of each other.
+// An anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+// typically using all the original letters exactly once. The comparison should be case-insensitive
+// and ignore spaces.
+// Example: Input: "Saurav is Singh Hexaware", "Singh Saurav Hexaware is" -> Output: true
 public class AnagramCheck {
     public static void main(String[] args) {
         String str1 = "Saurav is Singh Hexaware";

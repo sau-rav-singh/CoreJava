@@ -1,6 +1,8 @@
 package Linkedin;
 
 public class SecondMostFrequentChar {
+    // QUESTION: Given a string, find the second most frequent character in it.
+    // Example: Input: "banana" -> Output: 'n' (b:1, a:3, n:2)
     public static void main(String[] args) {
         String name = "banana";
         char[] arr = name.toCharArray();

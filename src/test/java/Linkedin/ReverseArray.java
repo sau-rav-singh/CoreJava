@@ -1,5 +1,7 @@
 package Linkedin;
 
+// QUESTION: Given an array of integers, reverse the array in-place.
+// Example: Input: [1, 2, 3, 4, 5, 6] -> Output: [6, 5, 4, 3, 2, 1]
 public class ReverseArray {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5,6};

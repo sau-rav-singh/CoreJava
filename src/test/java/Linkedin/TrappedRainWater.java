@@ -1,6 +1,9 @@
 package Linkedin;
 
 public class TrappedRainWater {
+    // QUESTION: Given an array of non-negative integers representing the height of bars, compute how
+    // much water it can trap after raining.
+    // Example: Input: [4,2,0,6,3,2,5] -> Output: 9
     public static void main(String[] args) {
         int[] height=new int[]{4,2,0,6,3,2,5};
         int waterTrapped=trapRainWater(height);

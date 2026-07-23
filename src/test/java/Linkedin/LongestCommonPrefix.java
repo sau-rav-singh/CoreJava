@@ -1,5 +1,8 @@
 package Linkedin;
 
+// QUESTION: Given an array of strings, find the longest common prefix string amongst the array.
+// If there is no common prefix, return an empty string.
+// Example: Input: ["flower", "flow", "flight"] -> Output: "fl"
 public class LongestCommonPrefix {
     public static void main(String[] args) {
         String[] strs = {"flower", "flow", "flight"};

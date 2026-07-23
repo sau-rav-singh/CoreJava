@@ -1,7 +1,9 @@
 package Linkedin;
 import java.util.Arrays;
 
-//Remove duplicate chars from arraylist of strings
+// QUESTION: Given an array of strings, remove duplicate characters from each string while
+// preserving the order of first occurrence.
+// Example: Input: ["hello", "helloishi", "mastercard"] -> Output: ["helo", "helois", "mstercd"]
 public class ArrayListTest {
     public static void main(String[] args) {
         String[] words = {"hello", "helloishi", "mastercard"};

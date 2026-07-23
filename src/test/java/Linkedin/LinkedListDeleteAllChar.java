@@ -1,9 +1,9 @@
 package Linkedin;
 
 public class LinkedListDeleteAllChar {
-    //Write a Program to create a linked list with following inputs and Delete all occurrences of a given key in a linked list.
-    //Input: head: 3 -> 3 -> 6 -> 9 -> 3 -> NULL, key = 3
-    //Output: 6 -> 9 -> NULL, i.e., we need to delete All occurrences of the given key = 3 from the Linked List
+    // QUESTION: Given a linked list and a key, delete all occurrences of the given key in the linked list.
+    // Example: Input: 3 -> 3 -> 6 -> 9 -> 3 -> NULL, key = 3
+    //          Output: 6 -> 9 -> NULL
 
     public static void main(String[] args) {
         CustomLinkedList list = new CustomLinkedList(10);

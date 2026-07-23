@@ -1,6 +1,8 @@
 package Linkedin;
 
-//Segregate Zeroes at last
+// QUESTION: Given an array of integers, move all zeros to the end of the array while maintaining
+// the relative order of non-zero elements.
+// Example: Input: [2, 3, 0, 0, 5, 0, 8] -> Output: [2, 3, 5, 8, 0, 0, 0]
 public class SegrigateZeroAtLast {
     public static void main(String[] args) {
         int[] arr = {2, 3, 0, 0, 5, 0, 8};

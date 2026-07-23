@@ -3,6 +3,10 @@ package Linkedin;
 import java.util.HashMap;
 import java.util.Map;
 
+// QUESTION: Given a string of space-separated words, find the second most frequent word in the string.
+// If there is no second most frequent word (i.e., all words have the same frequency), return null.
+// Example: Input: "apple banana apple orange banana apple banana grape banana orange orange"
+//          Output: "orange" (frequency 3, while "banana" has frequency 4 and "apple" has frequency 3)
 public class SecondMostFrequentString {
     public static void main(String[] args) {
         String input = "apple banana apple orange banana apple banana grape banana orange orange";

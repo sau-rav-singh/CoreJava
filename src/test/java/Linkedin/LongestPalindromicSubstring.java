@@ -1,6 +1,10 @@
 package Linkedin;
 
 public class LongestPalindromicSubstring {
+    // QUESTION: Given a string, find the longest palindromic substring within it.
+    // A palindrome is a word that reads the same backward as forward.
+    // Example: Input: "babad" -> Output: "bab" or "aba"
+    //          Input: "cbbd" -> Output: "bb"
 
     public static void main(String[] args) {
         String str = "babad";

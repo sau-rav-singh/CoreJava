@@ -3,6 +3,9 @@ package Linkedin;
 import java.util.*;
 
 public class ZeroSumSubarrays {
+    // QUESTION: Given an array of integers, find all subarrays that sum to zero. Print each subarray.
+    // Example: Input: [6, 3, -1, -3, 4, -2, 2, 4, 6, -12, -7]
+    //          Output: All subarrays that sum to zero
     public static void printZeroSumSubarrays(int[] arr) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         map.put(0, new ArrayList<>(List.of(-1)));// To handle cases where the subarray starts from index 0

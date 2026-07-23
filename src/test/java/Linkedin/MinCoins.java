@@ -3,7 +3,9 @@ package Linkedin;
 import org.testng.Assert;
 
 public class MinCoins {
-    //Given below array represents coin value, find number of coin required to match the value
+    // QUESTION: Given an array of coin denominations and a target value, find the minimum number of coins
+    // required to make up that value. You may assume that you have an infinite supply of each coin type.
+    // Example: Input: coins = [1,2,5,10], value = 13 -> Output: 3 (10 + 2 + 1)
     public static void main(String[] args) {
         int[] coinArray={1,2,5,10};
         Assert.assertEquals(minCoins(coinArray,13),3);

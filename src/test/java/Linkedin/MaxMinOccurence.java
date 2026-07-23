@@ -1,8 +1,9 @@
 package Linkedin;
 
 public class MaxMinOccurence {
-//Get max and min occurrences of given String: Teeeessst Autoooooomationn
-// output: m-1 and o-8
+// QUESTION: Given a string, find the character with the maximum frequency and the character
+// with the minimum frequency (excluding characters that don't appear).
+// Example: Input: "TeeeessstAutooooooomationn" -> Output: o: 8, m: 1
 
     public static void main(String[] args) {
         maxMinOccurence();

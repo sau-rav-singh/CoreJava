@@ -3,6 +3,8 @@ package Linkedin;
 import java.util.Scanner;
 
 public class SwapWith {
+    // QUESTION: Swap two numbers using a temporary variable and also without using a temporary variable.
+    // Example: Input: x=10, y=5 -> Output: x=5, y=10
     public static void main(String[] args) {
         int x, y, t; // x and y are to swap
         Scanner sc = new Scanner(System.in);

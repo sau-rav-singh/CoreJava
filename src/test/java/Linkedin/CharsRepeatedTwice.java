@@ -1,5 +1,7 @@
 package Linkedin;
 
+// QUESTION: Given a string, find all characters that appear at least twice and print their frequency.
+// Example: Input: "aabccdad" -> Output: a: 3, c: 2, d: 2
 public class CharsRepeatedTwice {
     public static void main(String[] args) {
         String str = "aabccdad";//a,c,d

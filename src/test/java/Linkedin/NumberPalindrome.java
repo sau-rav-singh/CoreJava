@@ -3,6 +3,10 @@ package Linkedin;
 import java.util.Scanner;
 
 public class NumberPalindrome {
+    // QUESTION: Given an integer, determine if it is a palindrome. A palindrome number reads the same
+    // backward as forward. Negative numbers are not palindromes.
+    // Example: Input: 121 -> Output: true
+    //          Input: -121 -> Output: false
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

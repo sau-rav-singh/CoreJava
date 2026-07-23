@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LongestUniqueCharSubstring {
+    // QUESTION: Given a string, find the length of the longest substring without repeating characters.
+    // Example: Input: "GEEKSFORGEEKS" -> Output: "EKSFORG" (length 7)
     //Time Complexity: O(n)
     //Space Complexity: O(min(n, m))
     static String longestSubStrWithoutRepetition(String str) {

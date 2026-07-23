@@ -1,5 +1,8 @@
 package Linkedin;
 
+// QUESTION: Given an array of integers, find both the minimum and maximum elements in the array
+// using an efficient approach that minimizes the number of comparisons.
+// Example: Input: [12, 15, 7, 19, 3, 8] -> Output: Minimum: 3, Maximum: 19
 public class MinMaxArray {
     public static void findMinMax(int[] arr) {
         if (arr == null || arr.length == 0) {

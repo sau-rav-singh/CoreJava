@@ -4,6 +4,12 @@ import org.testng.Assert;
 import java.util.HashMap;
 import java.util.HashSet;
 
+// QUESTION: Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic
+// if the characters in s can be replaced to get t. All occurrences of a character must be replaced
+// with another character while preserving the order of characters. No two characters may map to
+// the same character, but a character may map to itself.
+// Example: Input: "aab", "xxy" -> Output: true
+//          Input: "bar", "foo" -> Output: false
 public class IsomorphicStrings {
     public static boolean areIsomorphic(String str1, String str2) {
         if (str1.length() != str2.length()) {

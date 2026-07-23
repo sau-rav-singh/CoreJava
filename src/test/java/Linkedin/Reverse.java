@@ -1,5 +1,9 @@
 package Linkedin;
 
+// QUESTION: Given a string, reverse the entire string and also reverse the order of words in the string.
+// Example: Input: "My Name is Saurav Singh"
+//          Reverse words: "Singh Saurav is Name My"
+//          Reverse string: "hgniS varuaS si emaN yM"
 public class Reverse {
     public static void main(String[] args) {
         String input = "My Name is Saurav Singh";

@@ -1,5 +1,10 @@
 package Linkedin;
 
+// QUESTION: An Armstrong number (also known as narcissistic number) is a number that is equal to
+// the sum of its own digits each raised to the power of the number of digits.
+// Write a function to check if a given number is an Armstrong number.
+// Example: Input: 153 -> Output: true (1^3 + 5^3 + 3^3 = 153)
+//          Input: 370 -> Output: true (3^3 + 7^3 + 0^3 = 370)
 public class ArmstrongNumbers {
 
     public static void main(String[] args) {

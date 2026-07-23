@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NonRepChar {
-    // Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1
+    // QUESTION: Given a string s, find the first non-repeating character in it and return its index.
+    // If it does not exist, return -1.
+    // Example: Input: "geeksforgeeks" -> Output: 5 (character 'f' at index 5)
 
     public static void main(String[] args) {
         System.out.println(nonRepCharWithMap("geeksforgeeks"));

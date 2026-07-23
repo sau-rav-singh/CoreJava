@@ -3,7 +3,8 @@ package Linkedin;
 import java.util.Arrays;
 
 public class SeparateEvenOdd {
-    //Shift all even numbers to left side of array and odd number to right side.
+    // QUESTION: Given an array of integers, move all even numbers to the left side and odd numbers to the right side.
+    // Example: Input: [1, 2, 3, 4, 5, 6, 7, 8, 9] -> Output: [2, 4, 6, 8, 1, 3, 5, 7, 9]
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         moveEven(arr);

@@ -3,6 +3,8 @@ package Linkedin;
 import java.util.PriorityQueue;
 
 public class KthLargest {
+    // QUESTION: Given an array of integers and a number k, find the kth largest element in the array.
+// Example: Input: [3, 2, 1, 5, 6, 4, 7], k = 3 -> Output: 5
     //Time Complexity: O(nlogn)
     //Space Complexity: O(n)
     public static void main(String[] args) {

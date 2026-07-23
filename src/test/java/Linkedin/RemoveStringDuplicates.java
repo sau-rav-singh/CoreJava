@@ -1,5 +1,8 @@
 package Linkedin;
 
+// QUESTION: Given a string, remove duplicate characters from it while preserving the order of
+// first occurrence.
+// Example: Input: "geeksforgeeks" -> Output: "geksfor"
 public class RemoveStringDuplicates {
     public static String removeDuplicates(String str) {
         boolean[] visited = new boolean[256];

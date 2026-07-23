@@ -1,5 +1,8 @@
 package Linkedin;
 
+// QUESTION: Given an array of integers and a number k, find the contiguous subarray of length k
+// that has the maximum average value and return that average.
+// Example: Input: [1, 12, -5, -6, 50, 3], k = 4 -> Output: 12.75
 public class MaxAverageSubarray {
     public static void main(String[] args) {
         int[] arr = {1, 12, -5, -6, 50, 3};

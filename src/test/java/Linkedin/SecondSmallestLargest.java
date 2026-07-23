@@ -1,6 +1,8 @@
 package Linkedin;
 
 public class SecondSmallestLargest {
+    // QUESTION: Given an array of integers, find both the second smallest and second largest elements.
+    // Example: Input: [1, 8, 5, 3, 20, 4, 5, 8, 6, 10] -> Output: Second Smallest: 3, Second Largest: 10
     public static void main(String[] args) {
         int[] arr = {1, 8, 5, 3, 20, 4, 5, 8, 6, 10};
         int secondSmallest = findSecondSmallest(arr);

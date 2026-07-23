@@ -1,5 +1,7 @@
 package Linkedin;
 
+// QUESTION: Implement bubble sort algorithm to sort an array of integers in ascending order.
+// Example: Input: [9, 8, 7, 4, 5, 6, 2, 1, 3] -> Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 public class BubbleSort {
 
     public static void main(String[] args) {

@@ -1,5 +1,12 @@
 package Linkedin;
 
+// QUESTION: Implement a custom linked list with the following operations:
+// - Add a node at the end
+// - Remove the first node
+// - Remove the last node
+// - Remove a node at a specific index
+// - Delete all nodes with a specific key value
+// - Print the list
 public class CustomLinkedList {
     int length;
     private Node head;

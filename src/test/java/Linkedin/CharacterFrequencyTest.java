@@ -1,6 +1,8 @@
 package Linkedin;
 
 public class CharacterFrequencyTest {
+    // QUESTION: Given a string, calculate the frequency of each character and print the results.
+    // Example: Input: "Picture Perfect" -> Output: P: 2, i: 1, c: 2, t: 2, u: 1, r: 2, e: 3, f: 1, : 1
     //t:O(n),s:O(1)
     public static void main(String[] args) {
         calculateFrequency("Picture Perfect");

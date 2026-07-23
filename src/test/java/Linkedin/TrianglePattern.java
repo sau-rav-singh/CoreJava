@@ -1,6 +1,14 @@
 package Linkedin;
 
 public class TrianglePattern {
+    // QUESTION: Print a right-angled triangle pattern of stars with the given number of rows.
+    // Example: Input: n = 5
+    //          Output:
+    //              *
+    //             * *
+    //            * * *
+    //           * * * *
+    //          * * * * *
 
 //    For Outer loop use Y axis(column)
 //    For inner Loop use X Axis(row)

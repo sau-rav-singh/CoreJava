@@ -1,6 +1,9 @@
 package Linkedin;
 
 public class SecondLargest {
+    // QUESTION: Given an array of integers, find the second largest element in the array.
+    // If there is no second largest element (i.e., all elements are the same), return an appropriate message.
+    // Example: Input: [1, 2, 3, 1, 2, 3, 4] -> Output: 3
     //Time Complexity: O(n)
     //Space Complexity:O(1)
     public static void main(String[] args) {

@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class SortedArrayListEquality {
+    // QUESTION: Given two ArrayLists of integers, determine if they contain the same elements
+    // regardless of their initial order. Sort both lists and compare them.
+    // Example: Input: [5, 2, 7, 1, 4] and [1, 2, 4, 5, 7] -> Output: true
     public static void main(String[] args) {
         // Example 1: Equal ArrayLists
         ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(5, 2, 7, 1, 4));

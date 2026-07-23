@@ -1,5 +1,8 @@
 package Linkedin;
 
+// QUESTION: Given an integer, reverse its digits and return the result.
+// Example: Input: 12345 -> Output: 54321
+//          Input: 123 -> Output: 321
 public class IntegerReverse {
     public static void main(String[] args) {
         int num = 12345;
