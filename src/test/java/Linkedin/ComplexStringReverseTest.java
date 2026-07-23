@@ -17,20 +17,23 @@ public class ComplexStringReverseTest {
     }
 
     public static String reverseString(String str) {
-        char[] inputArray = str.toCharArray();
-        StringBuilder sb=new StringBuilder();
-        List<Integer> spaceList=new ArrayList<>();
-        for(int i=inputArray.length-1;i>=0;i--){
-            if(inputArray[i]!=' '){
-                sb.append(inputArray[i]);
-            }else{
-                spaceList.add(i);
+        char[] arr = str.toCharArray();
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            if (arr[left] == ' ') {
+                left++;
+            } else if (arr[right] == ' ') {
+                right--;
+            } else {
+                char temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
             }
         }
-        Collections.sort(spaceList);
-        for(int i:spaceList){
-            sb.insert(i," ");
-        }
-        return sb.toString();
+        return new String(arr);
     }
 }
