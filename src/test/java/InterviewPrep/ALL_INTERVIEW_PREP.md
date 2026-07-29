@@ -11,7 +11,7 @@
 # Array Problems - Interview Prep Guide
 
 ## Overview
-This folder contains **26 problems** focused on array manipulation, covering fundamental to advanced techniques.
+This folder contains **25 problems** focused on array manipulation, covering fundamental to advanced techniques.
 
 ## Problem Categories
 
@@ -66,7 +66,6 @@ This folder contains **26 problems** focused on array manipulation, covering fun
 **Optimization**: Find both in single pass with n+1 comparisons
 
 ### 6. **Data Structure Collections** (3 problems)
-- `CompareSortedArrayLists.java` - Compare sorted arrays
 - `RemoveDupeCharFromList.java` - Remove duplicate characters from string array
 
 ---
@@ -183,49 +182,6 @@ Generated: Interview Prep Package - Array Folder
 
 ## Code Solutions
 
-### CompareSortedArrayLists.java
-
-```java
-package InterviewPrep.Array;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
-public class CompareSortedArrayLists {
-    // QUESTION: Given two ArrayLists of integers, determine if they contain the same elements
-    // regardless of their initial order. Sort both lists and compare them.
-    // Example: Input: [5, 2, 7, 1, 4] and [1, 2, 4, 5, 7] -> Output: true
-    public static void main(String[] args) {
-        // Example 1: Equal ArrayLists
-        ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(5, 2, 7, 1, 4));
-        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(1, 2, 4, 5, 7));
-
-        // Step 1: Sort both ArrayLists
-        Collections.sort(list1);
-        Collections.sort(list2);
-
-        // Step 2: Check for equality
-        boolean isEqual1 = list1.equals(list2);
-        System.out.println("Are sorted ArrayLists equal? " + isEqual1);
-
-        // Example 2: Different ArrayLists
-        ArrayList<Integer> list3 = new ArrayList<>(Arrays.asList(5, 2, 7, 1, 4));
-        ArrayList<Integer> list4 = new ArrayList<>(Arrays.asList(5, 4, 3, 2, 1));
-
-        // Step 1: Sort both ArrayLists
-        Collections.sort(list3);
-        Collections.sort(list4);
-
-        // Step 2: Check for equality
-        boolean isEqual2 = list3.equals(list4);
-        System.out.println("Are sorted ArrayLists equal? " + isEqual2);
-    }
-}
-
-
-```
-
 ### ContainsDuplicate.java
 
 ```java
@@ -233,24 +189,68 @@ package InterviewPrep.Array;
 
 import org.testng.Assert;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * LeetCode 217: Contains Duplicate
+ *
+ * Problem Statement:
+ * Given an integer array nums, return true if any value appears at least twice
+ * in the array, and return false if every element is distinct.
+ *
+ * Constraints:
+ * - 1 <= nums.length <= 10^5
+ * - -10^9 <= nums[i] <= 10^9
+ */
 public class ContainsDuplicate {
 
-//Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
-
-    /**
-     * Time Complexity: O(n)
-     * Space Complexity: O(n)
-     */
-
     public static void main(String[] args) {
-        Assert.assertTrue(containsDuplicate(new int[]{1, 2, 3, 1}));
-        Assert.assertFalse(containsDuplicate(new int[]{1,2,3,4}));
+        Assert.assertTrue(containsDuplicateWithSort(new int[]{1, 2, 3, 1}));
+        Assert.assertFalse(containsDuplicate(new int[]{1, 2, 3, 4}));
+        Assert.assertFalse(containsDuplicateBruteForce(new int[]{1, 2, 3, 4}));
     }
 
+    /**
+     * APPROACH 1: Sorting (In-Place)
+     *
+     * Time Complexity: O(N log N)
+     * - Arrays.sort(int[]) uses Dual-Pivot Quicksort.
+     * - Sorting takes O(N log N) on average.
+     * - Scanning adjacent elements takes O(N).
+     *
+     * Space Complexity: O(log N)
+     * - Auxiliary space is O(log N) due to the recursion stack used by Dual-Pivot Quicksort.
+     * - Note: The array is sorted in-place (the input array is mutated).
+     */
+    public static boolean containsDuplicateWithSort(int[] nums) {
+        if (nums == null || nums.length <= 1) {
+            return false;
+        }
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * APPROACH 2: HashSet (Optimal Time)
+     *
+     * Time Complexity: O(N)
+     * - Inserting into and querying a HashSet takes O(1) time on average.
+     * - Iterating through the array takes at most N steps.
+     *
+     * Space Complexity: O(N)
+     * - In the worst case (when all elements are distinct), the HashSet stores N integers.
+     */
     public static boolean containsDuplicate(int[] nums) {
+        if (nums == null || nums.length <= 1) {
+            return false;
+        }
         Set<Integer> dupeFilter = new HashSet<>();
         for (int i : nums) {
             if (!dupeFilter.add(i)) {
@@ -259,9 +259,30 @@ public class ContainsDuplicate {
         }
         return false;
     }
+
+    /**
+     * APPROACH 3: Brute Force (Nested Loops)
+     *
+     * Time Complexity: O(N^2)
+     * - Checks every unique pair (N * (N - 1) / 2 comparisons in the worst case).
+     *
+     * Space Complexity: O(1)
+     * - Uses auxiliary constant space only; does not mutate the original array.
+     */
+    public static boolean containsDuplicateBruteForce(int[] nums) {
+        if (nums == null || nums.length <= 1) {
+            return false;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
-
-
 ```
 
 ### LargestElement.java
@@ -293,15 +314,32 @@ public class LargestElement {
 package InterviewPrep.Array;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
+import java.util.HashMap;
+import java.util.Map;
 
-// QUESTION: Given an array of integers, return the largest integer that occurs only once. If no
-// such integer exists, return -1.
-// Example: Input: [1, 2, 2, 3, 3, 4, 4, 4] -> Output: 1
-//          Input: [2, 2, 2, 2] -> Output: -1
+/**
+ * LeetCode 1133: Largest Unique Number
+ *
+ * Given an array of integers `nums`, return the largest integer that occurs only once.
+ * If no such integer exists, return -1.
+ *
+ * Constraints:
+ * - 1 <= nums.length <= 2000
+ * - 0 <= nums[i] <= 1000
+ */
 public class LargestUniqueNumber {
 
-    public static Integer findLargestUniqueNumber(int[] nums) {
+    /**
+     * Approach 1: Counting Array (Optimal for LeetCode Constraints)
+     *
+     * Time Complexity: O(N + K) where N = nums.length and K = max value (1000) -> O(N)
+     * Space Complexity: O(K) where K = max value range -> O(1) auxiliary space
+     */
+    public static int findLargestUniqueNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
         final int kMax = 1000;
         int[] count = new int[kMax + 1];
 
@@ -315,20 +353,47 @@ public class LargestUniqueNumber {
         return -1;
     }
 
-    @Test
-    public void largestUniqueTest() {
+    /**
+     * Approach 2: HashMap (General Solution for arbitrary/negative numbers)
+     *
+     * Time Complexity: O(N)
+     * Space Complexity: O(N)
+     */
+    public static int findLargestUniqueNumberHashMap(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
+        Map<Integer, Integer> counts = new HashMap<>();
+        for (int num : nums) {
+            counts.put(num, counts.getOrDefault(num, 0) + 1);
+        }
+
+        int maxUnique = -1;
+        for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {
+            if (entry.getValue() == 1) {
+                maxUnique = Math.max(maxUnique, entry.getKey());
+            }
+        }
+
+        return maxUnique;
+    }
+
+    public static void main(String[] args) {
+        // Test Approach 1
         Assert.assertEquals(findLargestUniqueNumber(new int[]{2, 2, 2, 2}), -1);
         Assert.assertEquals(findLargestUniqueNumber(new int[]{1, 2, 2, 3, 3, 4, 4, 4}), 1);
-        Assert.assertEquals(findLargestUniqueNumber(new int[]{1, 2, 3, 4, 5}), Integer.valueOf(5));
-        Assert.assertEquals(findLargestUniqueNumber(new int[]{1, 1, 2, 2, 3, 4}), Integer.valueOf(4));
-        Assert.assertEquals(findLargestUniqueNumber(new int[]{4, 3, 3, 2, 2, 1}), Integer.valueOf(4));
-        Assert.assertEquals(findLargestUniqueNumber(new int[]{3, 1, 4, 1, 5, 5}), Integer.valueOf(4));
+        Assert.assertEquals(findLargestUniqueNumber(new int[]{1, 2, 3, 4, 5}), 5);
+        Assert.assertEquals(findLargestUniqueNumber(new int[]{1, 1, 2, 2, 3, 4}), 4);
+        Assert.assertEquals(findLargestUniqueNumber(new int[]{4, 3, 3, 2, 2, 1}), 4);
+        Assert.assertEquals(findLargestUniqueNumber(new int[]{3, 1, 4, 1, 5, 5}), 4);
         Assert.assertEquals(findLargestUniqueNumber(new int[]{}), -1);
-        Assert.assertEquals(findLargestUniqueNumber(new int[]{99}), Integer.valueOf(99));
+        Assert.assertEquals(findLargestUniqueNumber(new int[]{99}), 99);
+
+        // Test Approach 2 (General)
+        Assert.assertEquals(findLargestUniqueNumberHashMap(new int[]{3, 1, 4, 1, 5, 5}), 4);
     }
 }
-
-
 ```
 
 ### MaxAverageSubarray.java
