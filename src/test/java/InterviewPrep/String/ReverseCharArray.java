@@ -2,7 +2,7 @@ package InterviewPrep.String;
 
 import java.util.Arrays;
 
-public class ReverseString_12 {
+public class ReverseCharArray {
     //Write a function that reverses a string. The input string is given as an array of characters s.
 
     public static void main(String[] args) {

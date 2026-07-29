@@ -8,7 +8,7 @@ import java.util.*;
 // QUESTION: Given two arrays of strings, find the common elements between them.
 // Example: Input: ["apple", "banana", "single", "Laxmi", "Raghu"], ["june", "july", "apple", "april", "Laxmi"]
 //          Output: ["apple", "Laxmi"]
-public class CommonStringTest {
+public class CommonElementsInArrays {
     //Time Complexity: O(n + m)
     //Space Complexity: O(n + m)
 

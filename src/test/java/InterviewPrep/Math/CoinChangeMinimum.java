@@ -2,7 +2,7 @@ package InterviewPrep.Math;
 
 import org.testng.Assert;
 
-public class MinCoins {
+public class CoinChangeMinimum {
     // QUESTION: Given an array of coin denominations and a target value, find the minimum number of coins
     // required to make up that value. You may assume that you have an infinite supply of each coin type.
     // Example: Input: coins = [1,2,5,10], value = 13 -> Output: 3 (10 + 2 + 1)

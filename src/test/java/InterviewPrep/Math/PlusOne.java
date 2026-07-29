@@ -14,7 +14,7 @@ import java.util.List;
 // Example: Input: [1,2,3] -> Output: [1,2,4]
 //          Input: [9,9,9] -> Output: [1,0,0,0]
 
-public class AddOneToNumberTest {
+public class PlusOne {
 
     public static int[] addOne(int[] arr) {
         List<Integer> result = new ArrayList<>();

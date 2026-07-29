@@ -1,6 +1,6 @@
 package InterviewPrep.LinkedList;
 
-public class LL {
+public class SinglyLinkedListImplementation {
     static class Node {
         int value;
         Node next;

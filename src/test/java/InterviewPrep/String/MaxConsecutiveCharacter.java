@@ -1,6 +1,6 @@
 package InterviewPrep.String;
 
-public class NthConsecutiveString {
+public class MaxConsecutiveCharacter {
     // QUESTION: Given a string, find the character that appears consecutively the maximum number of times.
     // Example: Input: "Amazon is a great company as it has Atooozzzz" -> Output: 'z'
     public static void main(String[] args) {

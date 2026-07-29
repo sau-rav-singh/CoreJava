@@ -1,6 +1,6 @@
 package InterviewPrep.String;
 
-public class TrianglePattern {
+public class PrintTrianglePattern {
     // QUESTION: Print a right-angled triangle pattern of stars with the given number of rows.
     // Example: Input: n = 5
     //          Output:

@@ -1,6 +1,6 @@
 package InterviewPrep.String;
 
-public class SeperateCaps {
+public class SeparateCharactersByType {
     // QUESTION: Given a string containing lowercase letters, uppercase letters, and digits,
     // print the lowercase characters, uppercase characters, and digits separately.
     // Example: Input: "sumitM28" -> Output: sumit, M, 28

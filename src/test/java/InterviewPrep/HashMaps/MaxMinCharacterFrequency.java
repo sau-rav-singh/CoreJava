@@ -1,6 +1,6 @@
 package InterviewPrep.HashMaps;
 
-public class MaxMinOccurence {
+public class MaxMinCharacterFrequency {
 // QUESTION: Given a string, find the character with the maximum frequency and the character
 // with the minimum frequency (excluding characters that don't appear).
 // Example: Input: "TeeeessstAutooooooomationn" -> Output: o: 8, m: 1

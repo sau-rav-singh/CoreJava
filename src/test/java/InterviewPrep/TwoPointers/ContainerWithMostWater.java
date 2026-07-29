@@ -12,7 +12,7 @@ import java.util.List;
 // with the x-axis form a container, such that the container contains the most water. Return the
 // maximum amount of water a container can store.
 // Example: Input: [1,8,6,2,5,4,8,3,7] -> Output: 49
-public class ContainerwithMaxWaterTest {
+public class ContainerWithMostWater {
     @Test
     public void testMaxArea() {
         List<Integer> height = new ArrayList<>(Arrays.asList(1, 8, 6, 2, 5, 4, 8, 3, 7));

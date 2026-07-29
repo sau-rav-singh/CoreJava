@@ -3,7 +3,7 @@ package InterviewPrep.HashMaps;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NonRepChar {
+public class FirstNonRepeatingCharacter {
     // QUESTION: Given a string s, find the first non-repeating character in it and return its index.
     // If it does not exist, return -1.
     // Example: Input: "geeksforgeeks" -> Output: 5 (character 'f' at index 5)
