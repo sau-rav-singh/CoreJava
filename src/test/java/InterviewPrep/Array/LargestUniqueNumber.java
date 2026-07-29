@@ -1,7 +1,6 @@
 package InterviewPrep.Array;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 // QUESTION: Given an array of integers, return the largest integer that occurs only once. If no
 // such integer exists, return -1.
@@ -23,8 +22,7 @@ public class LargestUniqueNumber {
         return -1;
     }
 
-    @Test
-    public void largestUniqueTest() {
+    public static void main(String[] args) {
         Assert.assertEquals(findLargestUniqueNumber(new int[]{2, 2, 2, 2}), -1);
         Assert.assertEquals(findLargestUniqueNumber(new int[]{1, 2, 2, 3, 3, 4, 4, 4}), 1);
         Assert.assertEquals(findLargestUniqueNumber(new int[]{1, 2, 3, 4, 5}), Integer.valueOf(5));

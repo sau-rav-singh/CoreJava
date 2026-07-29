@@ -1,7 +1,7 @@
 # Array Problems - Interview Prep Guide
 
 ## Overview
-This folder contains **26 problems** focused on array manipulation, covering fundamental to advanced techniques.
+This folder contains **25 problems** focused on array manipulation, covering fundamental to advanced techniques.
 
 ## Problem Categories
 
@@ -56,7 +56,6 @@ This folder contains **26 problems** focused on array manipulation, covering fun
 **Optimization**: Find both in single pass with n+1 comparisons
 
 ### 6. **Data Structure Collections** (3 problems)
-- `CompareSortedArrayLists.java` - Compare sorted arrays
 - `RemoveDupeCharFromList.java` - Remove duplicate characters from string array
 
 ---

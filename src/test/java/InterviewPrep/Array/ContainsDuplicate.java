@@ -16,7 +16,7 @@ public class ContainsDuplicate {
 
     public static void main(String[] args) {
         Assert.assertTrue(containsDuplicate(new int[]{1, 2, 3, 1}));
-        Assert.assertFalse(containsDuplicate(new int[]{1,2,3,4}));
+        Assert.assertFalse(containsDuplicate(new int[]{1, 2, 3, 4}));
     }
 
     public static boolean containsDuplicate(int[] nums) {
