@@ -1,27 +1,24 @@
 # String Problems - Interview Prep Guide
 
 ## Overview
-This folder contains **26 problems** focused on string manipulation and pattern matching.
+This folder contains **24 problems** focused on string manipulation and pattern matching.
 
 ## Problem Categories
 
-### 1. **Palindrome Problems** (5 problems)
-- `isPalindrome_7.java` - Check if string is palindrome
-- `StringPalindrome.java` - String palindrome check
+### 1. **Palindrome Problems** (2 problems)
+- `Palindrome.java` - Check if string is palindrome (multiple approaches)
 - `NumberPalindrome.java` - Check if number is palindrome
-- `Palindrome.java` - Basic palindrome logic
 - `LongestPalindromicSubstring.java` - Find longest palindromic substring
 
 **Techniques**: Two-pointers, Expand around center, DP
 **Time**: O(n) to O(n²)
 
-### 2. **Reversal Problems** (7 problems)
-- `ReverseString_12.java` - Reverse string
+### 2. **Reversal Problems** (5 problems)
+- `ReverseCharArray.java` - Reverse character array in-place
 - `ReverseString.java` - Character-by-character reversal
-- `ComplexStringReverseTest.java` - Reverse with special characters
+- `ReverseStringPreservingSpaces.java` - Reverse with space positions maintained
 - `ReverseStringWithoutSpecialChars.java` - Reverse only alphanumeric
 - `Reverse.java` - Additional reversal approach
-- `IntegerReverse.java` - Reverse integer (moved from Math for string context)
 - `RomanToInt.java` - Roman numeral to integer conversion
 
 **Techniques**: Two-pointers, Recursion, Stack
@@ -31,27 +28,27 @@ This folder contains **26 problems** focused on string manipulation and pattern 
 - `LongestUniqueCharSubstring.java` - Longest substring with unique chars
 - `LongestCommonPrefix.java` - Common prefix of strings
 - `PermutationInString.java` - Check if one string is permutation of another
-- `FirstOccurence.java` - Find first occurrence of substring
+- `FindSubstringIndex.java` - Find first occurrence of substring
 - `IsomorphicStrings.java` - Check if strings are isomorphic
-- `CommonStringTest.java` - Common string operations
+- `CommonElementsInArrays.java` - Common elements in string arrays
 
 **Techniques**: Sliding window, Hashing, Two-pointers
 **Best For**: Pattern matching problems
 
 ### 4. **Character Operations** (6 problems)
-- `CharacterFrequencyTest.java` - Moved to HashMaps but related
-- `CharsRepeatedTwice.java` - Characters repeated twice
-- `SeperateCaps.java` - Separate capital letters
-- `SortStringCharsTest.java` - Sort characters in string
-- `NthConsecutiveString.java` - Find Nth consecutive pattern
-- `TrianglePattern.java` - Pattern printing with characters
+- `CharactersWithFrequency.java` - Characters repeated at least twice
+- `SeparateCharactersByType.java` - Separate uppercase, lowercase, digits
+- `SortCharactersByFrequency.java` - Sort characters by frequency
+- `MaxConsecutiveCharacter.java` - Find character with max consecutive occurrences
+- `PrintTrianglePattern.java` - Pattern printing with characters
+- `RemoveStringDuplicates.java` - Remove duplicate characters
 
 **Techniques**: HashMap, String manipulation
 
 ### 5. **String Transformation** (3 problems)
 - `StringCompression.java` - Compress string (run-length encoding)
 - `StringPermutations.java` - Generate all permutations
-- `RomanToInt.java` - Roman numeral to integer conversion
+- `LengthOfLastWord.java` - Find length of last word
 
 **Algorithm**: Backtracking for permutations
 **Challenge**: Generate all permutations efficiently
@@ -61,7 +58,7 @@ This folder contains **26 problems** focused on string manipulation and pattern 
 ## Key Techniques to Master
 
 ### 1. **Two-Pointer Technique**
-Used in: `ReverseString_12.java`, `Palindrome.java`
+Used in: `ReverseCharArray.java`, `Palindrome.java`
 - Check palindrome in O(n) time, O(1) space
 - Most efficient approach
 - Pattern: left starts at 0, right at length-1
@@ -88,10 +85,10 @@ Used in: `LongestPalindromicSubstring.java`, `LongestUniqueCharSubstring.java`
 ## Interview Preparation Checklist
 
 ### Easy Level (Start Here)
-- [ ] `ReverseString_12.java` - Basic string reversal
-- [ ] `isPalindrome_7.java` - Palindrome check
+- [ ] `ReverseCharArray.java` - Basic string reversal
+- [ ] `Palindrome.java` - Palindrome check
 - [ ] `LengthOfLastWord.java` - Count last word length
-- [ ] `FirstOccurence.java` - Substring search
+- [ ] `FindSubstringIndex.java` - Substring search
 - [ ] `RomanToInt.java` - Numeric conversion
 - [ ] `Reverse.java` - Alternative reversal
 
@@ -102,12 +99,12 @@ Used in: `LongestPalindromicSubstring.java`, `LongestUniqueCharSubstring.java`
 - [ ] `StringCompression.java` - Encoding
 - [ ] `IsomorphicStrings.java` - Pattern matching
 - [ ] `RemoveStringDuplicates.java` - Duplicate removal
-- [ ] `TrianglePattern.java` - Pattern printing
+- [ ] `PrintTrianglePattern.java` - Pattern printing
 
 ### Hard Level
 - [ ] `LongestPalindromicSubstring.java` - DP/Expand approach
 - [ ] `StringPermutations.java` - Backtracking
-- [ ] `ComplexStringReverseTest.java` - Edge cases
+- [ ] `ReverseStringPreservingSpaces.java` - Edge cases
 
 ---
 
@@ -115,12 +112,12 @@ Used in: `LongestPalindromicSubstring.java`, `LongestUniqueCharSubstring.java`
 
 ### 1. Reverse a String
 **Problem**: Reverse string in-place
-**Solution**: See `ReverseString_12.java`
+**Solution**: See `ReverseCharArray.java`
 **Follow-up**: Handle special characters, unicode
 
 ### 2. Palindrome Check
 **Problem**: Check if string is palindrome (ignore case/spaces)
-**Solution**: See `isPalindrome_7.java`
+**Solution**: See `Palindrome.java`
 **Interview Tip**: Mention two-pointer approach (O(n) time, O(1) space)
 
 ### 3. Longest Substring Without Repeating
@@ -148,9 +145,9 @@ Used in: `LongestPalindromicSubstring.java`, `LongestUniqueCharSubstring.java`
 These files handle string-related work but are categorized differently:
 
 - **HashMaps folder** (String frequency related):
-  - `GroupAnagrams_4.java` - Group anagrams
-  - `ValidAnagram_3.java` - Check if anagrams
-  - `CharacterFrequencyTest.java` - Character frequency
+  - `GroupAnagrams.java` - Group anagrams
+  - `ValidAnagram.java` - Check if anagrams
+  - `CharacterFrequency.java` - Character frequency
 
 - **Array folder** (String array operations):
   - `SortStringCharsTest.java` - Sort character array

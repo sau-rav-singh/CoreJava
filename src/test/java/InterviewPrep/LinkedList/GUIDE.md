@@ -1,7 +1,7 @@
 # LinkedList Problems - Interview Prep Guide
 
 ## Overview
-This folder contains **5 problems** focused on linked list data structures, covering basic operations, advanced manipulations, and algorithmic patterns.
+This folder contains **9 problems** focused on linked list data structures, covering basic operations, advanced manipulations, and algorithmic patterns.
 
 ## Problem Categories
 
@@ -21,7 +21,8 @@ This folder contains **5 problems** focused on linked list data structures, cove
 
 ### 3. **Advanced Operations** (2 problems)
 - `MergeSortedLists.java` - Merge two sorted linked lists
-- `CustomLinkedList.java` - Custom linked list implementation
+- `SinglyLinkedListImplementation.java` - Custom linked list implementation
+- `DeleteAllOccurrences.java` - Delete all occurrences of a value
 
 **Applications**: Merging, sorting, data structure design
 

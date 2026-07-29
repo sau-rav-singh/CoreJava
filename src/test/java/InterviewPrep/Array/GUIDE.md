@@ -1,39 +1,35 @@
 # Array Problems - Interview Prep Guide
 
 ## Overview
-This folder contains **33 problems** focused on array manipulation, covering fundamental to advanced techniques.
+This folder contains **26 problems** focused on array manipulation, covering fundamental to advanced techniques.
 
 ## Problem Categories
 
-### 1. **Basic Operations** (6 problems)
+### 1. **Basic Operations** (5 problems)
 - `MergeSortedArrays.java` - Merge two sorted arrays
 - `RemoveElement.java` - Remove specific element in-place
 - `RemoveDuplicates.java` - Remove duplicates from sorted array
-- `RemoveDuplicates_10.java` - Alternative duplicate removal approach
-- `SearchInsertPositionTest.java` - Binary search variant
-- `ContainsDuplicate_1.java` - Check for duplicates
+- `SearchInsertPosition.java` - Binary search variant
+- `ContainsDuplicate.java` - Check for duplicates
 
 **Time Complexity**: O(n) to O(n log n)
 **Space Complexity**: O(1) to O(n)
 
-### 2. **Zero/Element Manipulation** (6 problems)
-- `MoveZeroes_8.java` - Move all zeros to end maintaining order
-- `ShiftZeroes.java` - Similar approach
-- `SegrigateZeroAtLast.java` - Segregate zeros at end
+### 2. **Zero/Element Manipulation** (4 problems)
+- `MoveZeroes.java` - Move all zeros to end maintaining order
 - `SeparateEvenOdd.java` - Separate even and odd numbers
-- `Startingwith1.java` - Rearrange starting with 1
+- `NumbersStartingWithDigit.java` - Filter numbers by starting digit
 - `ReverseArray.java` - Reverse array elements
 
 **Technique**: In-place manipulation, two-pointers
 **Best For**: Space-optimized solutions
 
-### 3. **Range & Subarray Problems** (8 problems)
-- `RangeSum_5.java` - Range sum queries
+### 3. **Range & Subarray Problems** (7 problems)
+- `RangeSumQuery.java` - Range sum queries using prefix sums
 - `MaxSumSubArray.java` - Maximum sum subarray (Kadane's algorithm)
 - `ZeroSumSubarrays.java` - Find subarrays with zero sum
 - `TrappedRainWater.java` - Classic rain water trapping problem
 - `MaxAverageSubarray.java` - Maximum average subarray
-- `MaxAverage_13.java` - Alternative maximum average calculation
 - `PairSumOfSortedArray.java` - Find pair with given sum
 - `StockBuySell.java` - Best time to buy and sell stock
 
@@ -43,36 +39,32 @@ This folder contains **33 problems** focused on array manipulation, covering fun
 - Dynamic programming
 - Two-pointers
 
-### 4. **Sorting & Searching** (6 problems)
-- `SortedSquares_11.java` - Squares of sorted array
-- `SortedSquares.java` - Duplicate approach
-- `MissingNumber_6.java` - Find missing number
+### 4. **Sorting & Searching** (4 problems)
+- `SortedSquares.java` - Squares of sorted array
+- `MissingNumber.java` - Find missing number
 - `ProductArray.java` - Product of array except self
-- `TwoSum_2.java` - Two sum problem approach 1
-- `TwoSum_9.java` - Two sum problem approach 2
+- `TwoSum.java` - Two sum problem (HashMap and Two-pointer approaches)
 
 **Challenge**: Solve without division, in O(n) time
 
-### 5. **Comparison & Analysis** (5 problems)
+### 5. **Comparison & Analysis** (3 problems)
 - `LargestElement.java` - Find maximum element
-- `LargestUniqueNumberTest.java` - Largest unique number
-- `SecondLargest.java` - Second largest element
+- `LargestUniqueNumber.java` - Largest unique number
 - `SecondSmallestLargest.java` - Both second largest and smallest
 - `MinMaxArray.java` - Find min and max
 
 **Optimization**: Find both in single pass with n+1 comparisons
 
 ### 6. **Data Structure Collections** (3 problems)
-- `ArrayListTest.java` - ArrayList operations
-- `SortedArrayListEquality.java` - Compare sorted arrays
-- `ArrayElementFrequency.java` - Frequency counting
+- `CompareSortedArrayLists.java` - Compare sorted arrays
+- `RemoveDupeCharFromList.java` - Remove duplicate characters from string array
 
 ---
 
 ## Key Techniques to Master
 
 ### 1. **Two-Pointer Technique**
-Used in: `MoveZeroes_8.java`, `SeparateEvenOdd.java`, `PairSumOfSortedArray.java`
+Used in: `MoveZeroes.java`, `SeparateEvenOdd.java`, `PairSumOfSortedArray.java`
 - Useful for sorted arrays
 - Space-efficient (O(1) extra space)
 - Common pattern: slow/fast pointers or left/right pointers
@@ -84,7 +76,7 @@ Used in: `MaxAverageSubarray.java`, `PairSumOfSortedArray.java`
 - Commonly asked in interviews
 
 ### 3. **Prefix Sums**
-Used in: `RangeSum_5.java`, `ZeroSumSubarrays.java`
+Used in: `RangeSumQuery.java`, `ZeroSumSubarrays.java`
 - Precompute to answer range queries efficiently
 - Trade space (O(n)) for time (O(1) per query)
 
@@ -101,7 +93,7 @@ Used in: `MaxSumSubArray.java`
 ### Easy Level (Start Here)
 - [ ] MergeSortedArrays.java
 - [ ] RemoveElement.java
-- [ ] MoveZeroes_8.java
+- [ ] MoveZeroes.java
 - [ ] LargestElement.java
 - [ ] RemoveDuplicates.java
 - [ ] ReverseArray.java
@@ -112,22 +104,21 @@ Used in: `MaxSumSubArray.java`
 - [ ] ProductArray.java
 - [ ] SeparateEvenOdd.java
 - [ ] PairSumOfSortedArray.java
-- [ ] TwoSum_2.java
-- [ ] MaxAverage_13.java
+- [ ] TwoSum.java
+- [ ] MaxAverageSubarray.java
 
 ### Hard Level
 - [ ] ZeroSumSubarrays.java
 - [ ] StockBuySell.java
-- [ ] MissingNumber_6.java
-- [ ] SortedSquares_11.java
-- [ ] TwoSum_9.java
+- [ ] MissingNumber.java
+- [ ] SortedSquares.java
 
 ---
 
 ## Common Interview Questions
 
 1. **How to find duplicates with O(1) space?**
-   - See: `ContainsDuplicate_1.java`
+   - See: `ContainsDuplicate.java`
    - Technique: Modify array in-place
 
 2. **Find maximum sum of subarray**
@@ -135,11 +126,11 @@ Used in: `MaxSumSubArray.java`
    - Algorithm: Kadane's Algorithm
 
 3. **Rearrange array with O(1) space**
-   - See: `MoveZeroes_8.java`, `SeparateEvenOdd.java`
+   - See: `MoveZeroes.java`, `SeparateEvenOdd.java`
    - Technique: In-place two-pointer
 
 4. **Range sum queries**
-   - See: `RangeSum_5.java`
+   - See: `RangeSumQuery.java`
    - Optimization: Prefix sum array
 
 5. **Stock trading problems**

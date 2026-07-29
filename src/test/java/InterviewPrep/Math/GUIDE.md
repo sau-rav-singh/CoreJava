@@ -1,7 +1,7 @@
 # Math Problems - Interview Prep Guide
 
 ## Overview
-This folder contains **11 problems** focused on mathematical algorithms and number theory problems.
+This folder contains **10 problems** focused on mathematical algorithms and number theory problems.
 
 ## Problem Categories
 
@@ -38,7 +38,7 @@ This folder contains **11 problems** focused on mathematical algorithms and numb
 ### 4. **Number Operations** (3 problems)
 - `AddBinary.java` - Binary addition
 - `IntegerReverse.java` - Reverse integer digits
-- `AddOneToNumberTest.java` - Add 1 to number array
+- `PlusOne.java` - Add 1 to number array
 
 **Techniques**:
 - Bit manipulation for binary operations
@@ -47,7 +47,7 @@ This folder contains **11 problems** focused on mathematical algorithms and numb
 
 ### 5. **Advanced Math** (2 problems)
 - `SquareRoot.java` - Calculate square root (Newton's method, binary search)
-- `MinCoins.java` - Minimum coins for amount (DP/Greedy)
+- `CoinChangeMinimum.java` - Minimum coins for amount (DP/Greedy)
 
 ---
 
@@ -115,12 +115,12 @@ Three approaches:
 ### Medium Level
 - [ ] `FibonacciSeries.java` - Optimization techniques
 - [ ] `SquareRoot.java` - Binary search variant
-- [ ] `AddOneToNumberTest.java` - Array manipulation
+- [ ] `PlusOne.java` - Array manipulation
 - [ ] `ArmstrongNumbers.java` - Digit extraction
 
 ### Hard Level
 - [ ] `ClimbingStairs.java` - DP optimization
-- [ ] `MinCoins.java` - DP/Greedy analysis
+- [ ] `CoinChangeMinimum.java` - DP/Greedy analysis
 - [ ] Multiple Fibonacci approaches - Compare implementations
 
 ---

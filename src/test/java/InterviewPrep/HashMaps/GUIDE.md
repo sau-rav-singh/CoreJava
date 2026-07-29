@@ -1,15 +1,13 @@
 # HashMaps & Frequency Problems - Interview Prep Guide
 
 ## Overview
-This folder contains **11 problems** focused on hash-based data structures, frequency counting, and grouping patterns.
+This folder contains **9 problems** focused on hash-based data structures, frequency counting, and grouping patterns.
 
 ## Problem Categories
 
-### 1. **Anagram Problems** (4 problems)
-- `GroupAnagrams_4.java` - Group all anagrams together (IMPORTANT!)
-- `GroupAnagrams.java` - Alternative approach
-- `ValidAnagram_3.java` - Check if two strings are anagrams
-- `AnagramCheck.java` - Basic anagram verification
+### 1. **Anagram Problems** (2 problems)
+- `GroupAnagrams.java` - Group all anagrams together (multiple approaches)
+- `ValidAnagram.java` - Check if two strings are anagrams (multiple approaches)
 
 **Techniques**:
 - Sorting characters: Time O(n log n), Space O(n)
@@ -18,18 +16,17 @@ This folder contains **11 problems** focused on hash-based data structures, freq
 
 **Interview Focus**: Compare approaches, discuss tradeoffs
 
-### 2. **Character Frequency** (4 problems)
-- `CharacterFrequencyTest.java` - Count character occurrences
-- `NonRepChar.java` - Non-repeating character
+### 2. **Character Frequency** (3 problems)
+- `CharacterFrequency.java` - Count character occurrences
+- `FirstNonRepeatingCharacter.java` - First non-repeating character
 - `SecondMostFrequentChar.java` - Second most frequent
-- `CharsRepeatedTwice.java` - Characters that repeat exactly twice
+- `MaxMinCharacterFrequency.java` - Max and min frequency
 
 **Techniques**: HashMap, LinkedHashMap (for order), Array counting
 
 ### 3. **Integer/Element Frequency** (3 problems)
 - `IntegerFrequency.java` - Count integer occurrences
 - `ArrayElementFrequency.java` - Frequency of array elements
-- `MaxMinOccurence.java` - Elements with max/min frequency
 
 **Data Structures**: HashMap<Integer, Integer>, HashMap<Integer, List<Integer>>
 
@@ -82,19 +79,18 @@ Map<Character, Integer> map = new LinkedHashMap<>();
 ## Interview Preparation Checklist
 
 ### Easy Level (Start Here)
-- [ ] `AnagramCheck.java` - Basic anagram logic
-- [ ] `CharacterFrequencyTest.java` - Simple frequency counting
+- [ ] `CharacterFrequency.java` - Simple frequency counting
 - [ ] `IntegerFrequency.java` - Count occurrences
-- [ ] `ValidAnagram_3.java` - String comparison method
+- [ ] `ValidAnagram.java` - String comparison method
 
 ### Medium Level
-- [ ] `GroupAnagrams_4.java` - **MOST IMPORTANT** - Multiple approaches
-- [ ] `NonRepChar.java` - First non-repeating
+- [ ] `GroupAnagrams.java` - **MOST IMPORTANT** - Multiple approaches
+- [ ] `FirstNonRepeatingCharacter.java` - First non-repeating
 - [ ] `SecondMostFrequentChar.java` - Min heap approach
 - [ ] `ArrayElementFrequency.java` - Map all elements
 
 ### Hard Level
-- [ ] `MaxMinOccurence.java` - Complex frequency queries
+- [ ] `MaxMinCharacterFrequency.java` - Complex frequency queries
 - [ ] `SecondMostFrequentString.java` - Sorting frequencies
 
 ---
@@ -114,7 +110,7 @@ Approach 2: Use HashMap
 Approach 3: Character count array
 - Time: O(n), Space: O(1)
 ```
-**See**: `ValidAnagram_3.java`
+**See**: `ValidAnagram.java`
 
 ### 2. Group Anagrams
 **Problem**: Given array of strings, group anagrams together
@@ -123,7 +119,7 @@ Approach 3: Character count array
 1. Sort each word's characters
 2. Use as HashMap key
 3. Group words by key
-**See**: `GroupAnagrams_4.java` (has multiple approaches!)
+**See**: `GroupAnagrams.java` (has multiple approaches!)
 
 ### 3. Find First Non-Repeating Character
 **Problem**: Return first character that appears only once
@@ -131,7 +127,7 @@ Approach 3: Character count array
 1. Count all frequencies (HashMap)
 2. Iterate through string to maintain order
 3. Return first char with count = 1
-**See**: `NonRepChar.java`
+**See**: `FirstNonRepeatingCharacter.java`
 
 ### 4. Character Frequency Analysis
 **Problem**: Analyze character distribution
@@ -139,7 +135,7 @@ Approach 3: Character count array
 - Frequency analysis in cryptography
 - Data compression analysis
 - Natural language processing
-**See**: `CharacterFrequencyTest.java`
+**See**: `CharacterFrequency.java`
 
 ---
 
