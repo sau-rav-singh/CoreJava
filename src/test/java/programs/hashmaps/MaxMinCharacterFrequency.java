@@ -1,17 +1,38 @@
 package programs.hashmaps;
 
+import org.testng.Assert;
+
+/**
+ * Max Min Character Frequency
+ *
+ * Problem Statement:
+ * Given a string, find the character with the maximum frequency and the character
+ * with the minimum frequency (excluding characters that don't appear).
+ *
+ * Constraints:
+ * - 1 <= str.length <= 10^5
+ * - str consists of ASCII characters.
+ */
 public class MaxMinCharacterFrequency {
-// QUESTION: Given a string, find the character with the maximum frequency and the character
-// with the minimum frequency (excluding characters that don't appear).
-// Example: Input: "TeeeessstAutooooooomationn" -> Output: o: 8, m: 1
 
     public static void main(String[] args) {
-        maxMinOccurence();
+        char[] result = maxMinOccurence("TeeeessstAutooooooomationn");
+        Assert.assertEquals(result[0], 'o');
+        Assert.assertEquals(result[1], 'm');
     }
 
-    static void maxMinOccurence() {
+    /**
+     * APPROACH: Frequency Array (Optimal for ASCII)
+     *
+     * Time Complexity: O(N)
+     * - Single pass through the string.
+     *
+     * Space Complexity: O(1)
+     * - Fixed size array of 256 for ASCII.
+     */
+    public static char[] maxMinOccurence(String str) {
         int[] counter = new int[256];
-        for (char c : "TeeeessstAutooooooomationn".toCharArray()) {
+        for (char c : str.toCharArray()) {
             counter[c]++;
         }
 
@@ -30,7 +51,6 @@ public class MaxMinCharacterFrequency {
                 minChar = (char) i;
             }
         }
-        System.out.println(maxChar + ": " + maxCount);
-        System.out.println(minChar + ": " + minCount);
+        return new char[]{maxChar, minChar};
     }
 }

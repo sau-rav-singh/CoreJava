@@ -1,13 +1,22 @@
 package programs.stack;
 
+import org.testng.Assert;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Implement Stack Using Queue
+ *
+ * Problem Statement:
+ * Implement a last-in-first-out (LIFO) stack using only two queues.
+ * The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
+ *
+ * Constraints:
+ * - 1 <= x <= 9
+ * - At most 100 calls will be made to push, pop, top, and empty.
+ */
 public class ImplementStackUsingQueue {
-    // QUESTION: Implement a last-in-first-out (LIFO) stack using only two queues.
-    // The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
-    // Time Complexity: O(1) for push, O(n) for pop and top
-    // Space Complexity: O(n)
 
     private Queue<Integer> queue1;
     private Queue<Integer> queue2;
@@ -17,6 +26,28 @@ public class ImplementStackUsingQueue {
         queue2 = new LinkedList<>();
     }
 
+    public static void main(String[] args) {
+        ImplementStackUsingQueue stack = new ImplementStackUsingQueue();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        Assert.assertEquals(stack.top(), 3);
+        Assert.assertEquals(stack.pop(), 3);
+        Assert.assertEquals(stack.pop(), 2);
+        Assert.assertFalse(stack.empty());
+        Assert.assertEquals(stack.pop(), 1);
+        Assert.assertTrue(stack.empty());
+    }
+
+    /**
+     * APPROACH: Two Queues
+     *
+     * Time Complexity: O(1) for push, O(N) for pop and top
+     * - Push is constant, pop/top require transferring elements.
+     *
+     * Space Complexity: O(N)
+     * - Storing all elements in queues.
+     */
     public void push(int x) {
         queue2.offer(x);
         while (!queue1.isEmpty()) {
@@ -39,18 +70,5 @@ public class ImplementStackUsingQueue {
 
     public boolean empty() {
         return queue1.isEmpty();
-    }
-
-    public static void main(String[] args) {
-        ImplementStackUsingQueue stack = new ImplementStackUsingQueue();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        System.out.println(stack.top());    // Output: 3
-        System.out.println(stack.pop());    // Output: 3
-        System.out.println(stack.pop());    // Output: 2
-        System.out.println(stack.empty());  // Output: false
-        System.out.println(stack.pop());    // Output: 1
-        System.out.println(stack.empty());  // Output: true
     }
 }

@@ -1,16 +1,43 @@
 package programs.stack;
 
+import org.testng.Assert;
+
 import java.util.Stack;
 
+/**
+ * LeetCode 150: Evaluate Reverse Polish Notation
+ *
+ * Problem Statement:
+ * Evaluate the value of an arithmetic expression in Reverse Polish Notation.
+ * Valid operators are: +, -, *, /. Each operand may be an integer or another expression.
+ * Note: Division between two integers should truncate toward zero.
+ *
+ * Constraints:
+ * - 1 <= tokens.length <= 10^4
+ * - tokens[i] is either an operator: "+", "-", "*", or "/", or an integer.
+ */
 public class EvaluateRPN {
-    // QUESTION: Evaluate the value of an arithmetic expression in Reverse Polish Notation.
-    // Valid operators are: +, -, *, /. Each operand may be an integer or another expression.
-    // Note: Division between two integers should truncate toward zero.
-    // Example: Input: tokens = ["2","1","+","3","*"]
-    //          Output: 9 ((2 + 1) * 3)
-    // Time Complexity: O(n)
-    // Space Complexity: O(n)
 
+    public static void main(String[] args) {
+        String[] tokens1 = {"2", "1", "+", "3", "*"};
+        Assert.assertEquals(evalRPN(tokens1), 9);
+
+        String[] tokens2 = {"4", "13", "5", "/", "+"};
+        Assert.assertEquals(evalRPN(tokens2), 6);
+
+        String[] tokens3 = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
+        Assert.assertEquals(evalRPN(tokens3), 22);
+    }
+
+    /**
+     * APPROACH: Stack (Optimal)
+     *
+     * Time Complexity: O(N)
+     * - Single pass through tokens.
+     *
+     * Space Complexity: O(N)
+     * - Stack storing operands.
+     */
     public static int evalRPN(String[] tokens) {
         Stack<Integer> stack = new Stack<>();
 
@@ -45,16 +72,5 @@ public class EvaluateRPN {
             default:
                 throw new IllegalArgumentException("Unknown operator: " + operator);
         }
-    }
-
-    public static void main(String[] args) {
-        String[] tokens1 = {"2", "1", "+", "3", "*"};
-        System.out.println(evalRPN(tokens1)); // Output: 9
-
-        String[] tokens2 = {"4", "13", "5", "/", "+"};
-        System.out.println(evalRPN(tokens2)); // Output: 6
-
-        String[] tokens3 = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
-        System.out.println(evalRPN(tokens3)); // Output: 22
     }
 }

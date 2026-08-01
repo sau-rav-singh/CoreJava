@@ -1,15 +1,20 @@
 package programs.sorting;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
+import org.testng.Assert;
 
+import java.util.*;
+
+/**
+ * Sort HashMap By Value
+ *
+ * Problem Statement:
+ * Given a HashMap, sort it by its values in both ascending and descending order.
+ *
+ * Constraints:
+ * - 1 <= map.size() <= 10^4
+ * - Values are comparable integers.
+ */
 public class SortHashMapByValue {
-    // QUESTION: Given a HashMap, sort it by its values in both ascending and descending order.
-    // Example: Input: {apple=10, banana=5, cherry=15, date=2, elderberry=10}
-    //          Output (ascending): {date=2, banana=5, apple=10, elderberry=10, cherry=15}
 
     public static void main(String[] args) {
         HashMap<String, Integer> unsortedMap = new HashMap<>();
@@ -19,30 +24,46 @@ public class SortHashMapByValue {
         unsortedMap.put("date", 2);
         unsortedMap.put("elderberry", 10);
 
-        System.out.println("Unsorted HashMap: " + unsortedMap);
-
         Map<String, Integer> sortedMapAscending = sortByValue(unsortedMap);
-        System.out.println("Sorted HashMap by value (ascending): " + sortedMapAscending);
+        Assert.assertEquals(sortedMapAscending.size(), 5);
 
         Map<String, Integer> sortedMapDescending = sortByValueDescending(unsortedMap);
-        System.out.println("Sorted HashMap by value (descending): " + sortedMapDescending);
+        Assert.assertEquals(sortedMapDescending.size(), 5);
     }
 
+    /**
+     * APPROACH 1: Stream API (Optimal)
+     *
+     * Time Complexity: O(N log N)
+     * - Sorting the entry list.
+     *
+     * Space Complexity: O(N)
+     * - New LinkedHashMap.
+     */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
-        List<Entry<K, V>> list = new ArrayList<>(map.entrySet());
-        list.sort(Entry.comparingByValue());
-        Map<K, V> sortedMap = new java.util.LinkedHashMap<>();
-        for (Entry<K, V> entry : list) {
+        List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
+        list.sort(Map.Entry.comparingByValue());
+        Map<K, V> sortedMap = new LinkedHashMap<>();
+        for (Map.Entry<K, V> entry : list) {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
         return sortedMap;
     }
 
+    /**
+     * APPROACH 2: Stream API with Reverse
+     *
+     * Time Complexity: O(N log N)
+     * - Sorting the entry list.
+     *
+     * Space Complexity: O(N)
+     * - New LinkedHashMap.
+     */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValueDescending(Map<K, V> map) {
-        List<Entry<K, V>> list = new ArrayList<>(map.entrySet());
-        list.sort(Entry.<K, V>comparingByValue().reversed());
-        Map<K, V> sortedMap = new java.util.LinkedHashMap<>();
-        for (Entry<K, V> entry : list) {
+        List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
+        list.sort(Map.Entry.<K, V>comparingByValue().reversed());
+        Map<K, V> sortedMap = new LinkedHashMap<>();
+        for (Map.Entry<K, V> entry : list) {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
         return sortedMap;

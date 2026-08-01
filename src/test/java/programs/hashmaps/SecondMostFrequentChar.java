@@ -1,11 +1,34 @@
 package programs.hashmaps;
 
+import org.testng.Assert;
+
+/**
+ * Second Most Frequent Character
+ *
+ * Problem Statement:
+ * Given a string, find the second most frequent character in it.
+ *
+ * Constraints:
+ * - 1 <= str.length <= 10^5
+ * - str consists of lowercase English letters.
+ */
 public class SecondMostFrequentChar {
-    // QUESTION: Given a string, find the second most frequent character in it.
-    // Example: Input: "banana" -> Output: 'n' (b:1, a:3, n:2)
+
     public static void main(String[] args) {
-        String name = "banana";
-        char[] arr = name.toCharArray();
+        Assert.assertEquals(findSecondMostFrequent("banana"), 'n');
+    }
+
+    /**
+     * APPROACH: Frequency Array (Optimal for lowercase)
+     *
+     * Time Complexity: O(N)
+     * - Single pass through the string.
+     *
+     * Space Complexity: O(1)
+     * - Fixed size array of 26.
+     */
+    public static char findSecondMostFrequent(String str) {
+        char[] arr = str.toCharArray();
         int[] counter = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -33,7 +56,7 @@ public class SecondMostFrequentChar {
             }
         }
 
-        System.out.println("Second most frequent character: " + arr[secLar]);
+        return arr[secLar];
     }
 }
 

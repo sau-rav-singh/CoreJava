@@ -1,58 +1,77 @@
 package programs.fileio;
 
+import org.testng.Assert;
+
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
+/**
+ * Master Study Guide Bundler
+ *
+ * Problem Statement:
+ * Bundle all Java source files from all subpackages into a single master markdown file.
+ * Includes existing GUIDE.md content if present in each subpackage.
+ *
+ * Constraints:
+ * - Root directory must exist.
+ * - Files must be readable.
+ */
 public class MasterStudyGuideBundler {
 
-    // Relative path to the InterviewPrep folder from project root
     private static final String INTERVIEW_PREP_PATH = "src/test/java/programs";
     private static final String OUTPUT_FILE_NAME = "programs.md";
 
     public static void main(String[] args) {
-        bundleAllPackages();
+        boolean success = bundleAllPackages();
+        Assert.assertTrue(success, "Master guide bundling failed");
     }
 
-    public static void bundleAllPackages() {
+    /**
+     * APPROACH: Files.list() with Stream API (Modern NIO)
+     *
+     * Time Complexity: O(N)
+     * - N is the total size of all files to read.
+     *
+     * Space Complexity: O(N)
+     * - StringBuilder accumulates all content.
+     */
+    public static boolean bundleAllPackages() {
         Path rootDir = Paths.get(INTERVIEW_PREP_PATH);
         Path outputFile = rootDir.resolve(OUTPUT_FILE_NAME);
 
         if (!Files.exists(rootDir) || !Files.isDirectory(rootDir)) {
             System.err.println("Root directory does not exist: " + rootDir.toAbsolutePath());
-            return;
+            return false;
         }
 
         StringBuilder masterContent = new StringBuilder();
 
-        // Title and Table of Contents Header
         masterContent.append("# Complete Interview Prep Master Guide\n\n");
         masterContent.append("> *Generated automatically on: ").append(java.time.LocalDate.now()).append("*\n\n");
         masterContent.append("---\n\n");
 
         try (Stream<Path> subDirs = Files.list(rootDir)) {
-            // Process subdirectories (packages) alphabetically, ignoring non-directories
             subDirs.filter(Files::isDirectory)
                     .sorted(Comparator.comparing(Path::getFileName))
                     .forEach(packageDir -> processSubpackage(packageDir, masterContent));
 
-            // Write the complete master content into one single Markdown file
             Files.writeString(outputFile, masterContent.toString(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
             System.out.println("✅ Master guide created successfully at: " + outputFile.toAbsolutePath());
+            return true;
 
         } catch (IOException e) {
             System.err.println("Error bundling master guide: " + e.getMessage());
+            return false;
         }
     }
 
     private static void processSubpackage(Path packageDir, StringBuilder masterContent) {
         String packageName = packageDir.getFileName().toString();
 
-        // Header for each main topic/subpackage
         masterContent.append("# Topic: ").append(packageName).append("\n\n");
 
-        // 1. Process GUIDE.md if present
         Path guideFile = packageDir.resolve("GUIDE.md");
         if (Files.exists(guideFile)) {
             try {
@@ -63,7 +82,6 @@ public class MasterStudyGuideBundler {
             }
         }
 
-        // 2. Process Java Files
         masterContent.append("## Code Solutions\n\n");
 
         try (Stream<Path> files = Files.walk(packageDir, 1)) {
@@ -84,7 +102,7 @@ public class MasterStudyGuideBundler {
                         }
                     });
 
-            masterContent.append("\n---\n\n"); // Visual separator between topics
+            masterContent.append("\n---\n\n");
 
         } catch (IOException e) {
             System.err.println("Error traversing files in " + packageName + ": " + e.getMessage());

@@ -1,18 +1,39 @@
 package programs.stack;
 
+import org.testng.Assert;
+
 import java.util.Stack;
 
+/**
+ * LeetCode 394: Decode String
+ *
+ * Problem Statement:
+ * Given an encoded string, return its decoded string.
+ * The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets
+ * is being repeated exactly k times. Note that k is guaranteed to be a positive integer.
+ *
+ * Constraints:
+ * - 1 <= s.length <= 30
+ * - s consists of lowercase English letters, digits, and square brackets '[]'.
+ * - s is a valid encoded string.
+ */
 public class DecodeString {
-    // QUESTION: Given an encoded string, return its decoded string.
-    // The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets
-    // is being repeated exactly k times. Note that k is guaranteed to be a positive integer.
-    // Example: Input: s = "3[a]2[bc]"
-    //          Output: "aaabcbc"
-    //          Input: s = "3[a2[c]]"
-    //          Output: "accaccacc"
-    // Time Complexity: O(n)
-    // Space Complexity: O(n)
 
+    public static void main(String[] args) {
+        Assert.assertEquals(decodeString("3[a]2[bc]"), "aaabcbc");
+        Assert.assertEquals(decodeString("3[a2[c]]"), "accaccacc");
+        Assert.assertEquals(decodeString("2[abc]3[cd]ef"), "abcabccdcdcdef");
+    }
+
+    /**
+     * APPROACH: Two Stacks (Optimal)
+     *
+     * Time Complexity: O(N)
+     * - Single pass through the string.
+     *
+     * Space Complexity: O(N)
+     * - Stacks for counts and strings.
+     */
     public static String decodeString(String s) {
         Stack<Integer> countStack = new Stack<>();
         Stack<StringBuilder> stringStack = new Stack<>();
@@ -40,16 +61,5 @@ public class DecodeString {
         }
 
         return currentString.toString();
-    }
-
-    public static void main(String[] args) {
-        String s1 = "3[a]2[bc]";
-        System.out.println(decodeString(s1)); // Output: aaabcbc
-
-        String s2 = "3[a2[c]]";
-        System.out.println(decodeString(s2)); // Output: accaccacc
-
-        String s3 = "2[abc]3[cd]ef";
-        System.out.println(decodeString(s3)); // Output: abcabccdcdcdef
     }
 }

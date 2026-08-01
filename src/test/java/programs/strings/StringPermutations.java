@@ -1,18 +1,42 @@
 package programs.strings;
 
+import org.testng.Assert;
+
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * String Permutations
+ *
+ * Problem Statement:
+ * Given a string, generate all possible permutations of its characters.
+ *
+ * Constraints:
+ * - 1 <= str.length <= 8
+ * - str consists of lowercase English letters.
+ */
 public class StringPermutations {
-    // QUESTION: Given a string, generate all possible permutations of its characters.
-    // Example: Input: "geek" -> Output: All permutations of "geek"
-    //t:n!,s:n
+
     public static void main(String[] args) {
-        //printPermutn("geek", "");
-        System.out.println();
-        System.out.print(permute("geek"));
+        Set<String> result = permute("abc");
+        Assert.assertTrue(result.contains("abc"));
+        Assert.assertTrue(result.contains("acb"));
+        Assert.assertTrue(result.contains("bac"));
+        Assert.assertTrue(result.contains("bca"));
+        Assert.assertTrue(result.contains("cab"));
+        Assert.assertTrue(result.contains("cba"));
+        Assert.assertEquals(result.size(), 6);
     }
 
+    /**
+     * APPROACH 1: Recursive with Backtracking (Optimal)
+     *
+     * Time Complexity: O(N! * N)
+     * - N! permutations, each takes O(N) to build.
+     *
+     * Space Complexity: O(N!)
+     * - Storing all permutations.
+     */
     static void printPermutn(String str, String ans) {
         if (str.isEmpty()) {
             System.out.print(ans + " ");
@@ -28,6 +52,15 @@ public class StringPermutations {
         }
     }
 
+    /**
+     * APPROACH 2: Recursive with Set (Handles duplicates)
+     *
+     * Time Complexity: O(N! * N)
+     * - N! permutations, each takes O(N) to build.
+     *
+     * Space Complexity: O(N!)
+     * - Storing all permutations.
+     */
     static Set<String> permute(String str) {
         if (str == null) {
             return null;

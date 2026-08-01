@@ -1,11 +1,35 @@
 package programs.strings;
 
+import org.testng.Assert;
+
+/**
+ * Reverse String Without Special Characters
+ *
+ * Problem Statement:
+ * Given a string containing alphabetic characters and special characters, reverse only
+ * the alphabetic characters while keeping the special characters in their original positions.
+ *
+ * Constraints:
+ * - 1 <= str.length <= 10^4
+ * - str consists of alphabetic characters and special characters.
+ */
 public class ReverseStringWithoutSpecialChars {
-    // QUESTION: Given a string containing alphabetic characters and special characters, reverse only
-    // the alphabetic characters while keeping the special characters in their original positions.
-    // Example: Input: "a!b?c" -> Output: "c?b!a"
-    //Time Complexity: O(n)
-    //Space Complexity: O(n)
+
+    public static void main(String[] args) {
+        String str = "a!b?c";
+        String reversedStr = reverseString(str);
+        Assert.assertEquals(reversedStr, "c?b!a");
+    }
+
+    /**
+     * APPROACH: Two Pointers (Optimal)
+     *
+     * Time Complexity: O(N)
+     * - Single pass with two pointers.
+     *
+     * Space Complexity: O(N)
+     * - Character array for in-place modification.
+     */
     public static String reverseString(String str) {
         char[] charArray = str.toCharArray();
         int left = 0, right = charArray.length - 1;
@@ -24,12 +48,6 @@ public class ReverseStringWithoutSpecialChars {
             }
         }
 
-       return new String(charArray);
-    }
-
-    public static void main(String[] args) {
-        String str = "a!b?c";
-        String reversedStr = reverseString(str);
-        System.out.println(reversedStr); // Output: c?b!a
+        return new String(charArray);
     }
 }

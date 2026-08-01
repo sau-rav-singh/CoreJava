@@ -1,17 +1,32 @@
 package programs.strings;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
-// QUESTION: Given a string, reverse it while maintaining the original positions of spaces.
-// Example: Input: "this is a phone" -> Output: "enoh pa s isiht"
+/**
+ * Reverse String Preserving Spaces
+ *
+ * Problem Statement:
+ * Given a string, reverse it while maintaining the original positions of spaces.
+ *
+ * Constraints:
+ * - 1 <= str.length <= 10^4
+ * - str consists of printable ASCII characters and spaces.
+ */
 public class ReverseStringPreservingSpaces {
 
-    @Test
-    public void test(){
-        Assert.assertEquals(reverseString("this is a phone"),"enoh pa s isiht");
+    public static void main(String[] args) {
+        Assert.assertEquals(reverseString("this is a phone"), "enoh pa s isiht");
     }
 
+    /**
+     * APPROACH: Two Pointers (Optimal)
+     *
+     * Time Complexity: O(N)
+     * - Single pass with two pointers.
+     *
+     * Space Complexity: O(N)
+     * - Character array for in-place modification.
+     */
     public static String reverseString(String str) {
         char[] arr = str.toCharArray();
         int left = 0;

@@ -1,21 +1,41 @@
 package programs.hashmaps;
 
+import org.testng.Assert;
+
+/**
+ * Character Frequency
+ *
+ * Problem Statement:
+ * Given a string, calculate the frequency of each character and return the results.
+ *
+ * Constraints:
+ * - 1 <= str.length <= 10^5
+ * - str consists of ASCII characters.
+ */
 public class CharacterFrequency {
-    // QUESTION: Given a string, calculate the frequency of each character and print the results.
-    // Example: Input: "Picture Perfect" -> Output: P: 2, i: 1, c: 2, t: 2, u: 1, r: 2, e: 3, f: 1, : 1
-    //t:O(n),s:O(1)
+
     public static void main(String[] args) {
-        calculateFrequency("Picture Perfect");
+        int[] freq = calculateFrequency("Picture Perfect");
+        Assert.assertEquals(freq['P'], 2);
+        Assert.assertEquals(freq['i'], 1);
+        Assert.assertEquals(freq['c'], 2);
     }
 
-    public static void calculateFrequency(String str) {
+    /**
+     * APPROACH: Frequency Array (Optimal for ASCII)
+     *
+     * Time Complexity: O(N)
+     * - Single pass through the string.
+     *
+     * Space Complexity: O(1)
+     * - Fixed size array of 256 for ASCII.
+     */
+    public static int[] calculateFrequency(String str) {
         int[] countArr = new int[256];
         char[] arr = str.toCharArray();
         for (char c : arr) {
             countArr[c]++;
         }
-        for (int i = 0; i < countArr.length; i++) {
-            if (countArr[i] > 0) System.out.println((char) i + " :" + countArr[i]);
-        }
+        return countArr;
     }
 }

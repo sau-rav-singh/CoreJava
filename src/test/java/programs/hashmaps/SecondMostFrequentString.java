@@ -1,16 +1,40 @@
 package programs.hashmaps;
 
+import org.testng.Assert;
+
 import java.util.HashMap;
 import java.util.Map;
 
-// QUESTION: Given a string of space-separated words, find the second most frequent word in the string.
-// If there is no second most frequent word (i.e., all words have the same frequency), return null.
-// Example: Input: "apple banana apple orange banana apple banana grape banana orange orange"
-//          Output: "orange" (frequency 3, while "banana" has frequency 4 and "apple" has frequency 3)
+/**
+ * Second Most Frequent String
+ *
+ * Problem Statement:
+ * Given a string of space-separated words, find the second most frequent word in the string.
+ * If there is no second most frequent word (i.e., all words have the same frequency), return null.
+ *
+ * Constraints:
+ * - 1 <= input.length <= 10^5
+ * - Words consist of lowercase English letters.
+ */
 public class SecondMostFrequentString {
+
     public static void main(String[] args) {
         String input = "apple banana apple orange banana apple banana grape banana orange orange";
-        String[] words=input.split(" ");
+        String secondMostFrequent = getSecondMostFrequent(input);
+        Assert.assertEquals(secondMostFrequent, "orange");
+    }
+
+    /**
+     * APPROACH: HashMap (Optimal)
+     *
+     * Time Complexity: O(N)
+     * - Single pass through words.
+     *
+     * Space Complexity: O(N)
+     * - HashMap storing word frequencies.
+     */
+    public static String getSecondMostFrequent(String input) {
+        String[] words = input.split(" ");
 
         Map<String, Integer> frequencyMap = new HashMap<>();
         for (String word : words) {
@@ -18,12 +42,7 @@ public class SecondMostFrequentString {
                 frequencyMap.put(word, frequencyMap.getOrDefault(word, 0) + 1);
             }
         }
-        frequencyMap.forEach((word, frequency) -> System.out.println(word + ": " + frequency));
-        String secondMostFrequent = getSecondMostFrequent(frequencyMap);
-        System.out.println("Second most frequent string: " + secondMostFrequent);
-    }
 
-    private static String getSecondMostFrequent(Map<String, Integer> frequencyMap) {
         String secondMostFrequent = null;
         int secondMaxFrequency = 0;
         int maxFrequency = 0;

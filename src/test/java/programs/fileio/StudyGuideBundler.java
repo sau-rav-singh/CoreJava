@@ -1,33 +1,53 @@
-package programs.fileio; // Or place it in a utility package
+package programs.fileio;
+
+import org.testng.Assert;
 
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
+/**
+ * Study Guide Bundler
+ *
+ * Problem Statement:
+ * Bundle all Java source files from a subpackage into a single markdown file for study purposes.
+ * Includes existing GUIDE.md content if present.
+ *
+ * Constraints:
+ * - Target directory must exist.
+ * - Files must be readable.
+ */
 public class StudyGuideBundler {
 
-    // Update this path if necessary to match your project root
     private static final String BASE_PATH = "src/test/java/InterviewPrep";
 
     public static void main(String[] args) {
-        // Pass the subpackage folder name here (case-sensitive to directory)
-        bundleSubpackage("Array");
+        boolean success = bundleSubpackage("Array");
+        Assert.assertTrue(success, "Study guide bundling failed");
     }
 
-    public static void bundleSubpackage(String subpackageName) {
+    /**
+     * APPROACH: Files.walk() with Stream API (Modern NIO)
+     *
+     * Time Complexity: O(N)
+     * - N is the total size of all files to read.
+     *
+     * Space Complexity: O(N)
+     * - StringBuilder accumulates all content.
+     */
+    public static boolean bundleSubpackage(String subpackageName) {
         Path targetDir = Paths.get(BASE_PATH, subpackageName);
         Path guideFile = targetDir.resolve("GUIDE.md");
         Path outputFile = targetDir.resolve("BUNDLE_" + subpackageName + ".md");
 
         if (!Files.exists(targetDir) || !Files.isDirectory(targetDir)) {
             System.err.println("Directory does not exist: " + targetDir.toAbsolutePath());
-            return;
+            return false;
         }
 
         StringBuilder content = new StringBuilder();
 
-        // 1. Read existing GUIDE.md if it exists
         if (Files.exists(guideFile)) {
             try {
                 content.append(Files.readString(guideFile)).append("\n\n");
@@ -40,7 +60,6 @@ public class StudyGuideBundler {
 
         content.append("---\n\n## Java Source Code Solutions\n\n");
 
-        // 2. Iterate through all .java files and append them
         try (Stream<Path> paths = Files.walk(targetDir, 1)) {
             paths.filter(Files::isRegularFile)
                     .filter(p -> p.toString().endsWith(".java"))
@@ -59,12 +78,13 @@ public class StudyGuideBundler {
                         }
                     });
 
-            // 3. Write bundled output file
             Files.writeString(outputFile, content.toString(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
             System.out.println("✅ Bundled guide successfully generated: " + outputFile.toAbsolutePath());
+            return true;
 
         } catch (IOException e) {
             System.err.println("Error processing folder: " + e.getMessage());
+            return false;
         }
     }
 }

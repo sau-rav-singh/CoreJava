@@ -4,8 +4,17 @@ import org.testng.Assert;
 
 import java.util.Arrays;
 
-// QUESTION: Given two strings, determine if they are anagrams of each other.
-// An anagram is a word or phrase formed by rearranging the letters of a different word or phrase.
+/**
+ * LeetCode 242: Valid Anagram
+ *
+ * Problem Statement:
+ * Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+ * An anagram is a word or phrase formed by rearranging the letters of a different word or phrase.
+ *
+ * Constraints:
+ * - 1 <= s.length, t.length <= 5 * 10^4
+ * - s and t consist of lowercase English letters.
+ */
 public class ValidAnagram {
 
     public static void main(String[] args) {
@@ -18,10 +27,13 @@ public class ValidAnagram {
     }
 
     /**
-     * Approach 1: Sorting
-     * Time Complexity: O(n log n)
-     * Space Complexity: O(n)
-     * Use when interviewer asks NOT to use extra data structures
+     * APPROACH 1: Sorting
+     *
+     * Time Complexity: O(N log N)
+     * - Sorting both strings.
+     *
+     * Space Complexity: O(N)
+     * - Character arrays for sorting.
      */
     public static boolean isAnagramSorting(String s, String t) {
         if (s.length() != t.length()) return false;
@@ -36,10 +48,13 @@ public class ValidAnagram {
     }
 
     /**
-     * Approach 2: Frequency Array
-     * Time Complexity: O(n)
-     * Space Complexity: O(1) - fixed size array of 26
-     * Use when only lowercase letters are involved
+     * APPROACH 2: Frequency Array (Optimal)
+     *
+     * Time Complexity: O(N)
+     * - Single pass through both strings.
+     *
+     * Space Complexity: O(1)
+     * - Fixed size array of 26 for lowercase letters.
      */
     public static boolean isAnagramFrequency(String s, String t) {
         if (s.length() != t.length()) return false;
@@ -59,10 +74,13 @@ public class ValidAnagram {
     }
 
     /**
-     * Approach 3: Sorting with space/ignore handling
-     * Time Complexity: O(n log n)
-     * Space Complexity: O(n)
-     * Use when strings contain spaces and need case-insensitive comparison
+     * APPROACH 3: Sorting with space/ignore handling
+     *
+     * Time Complexity: O(N log N)
+     * - Sorting after preprocessing.
+     *
+     * Space Complexity: O(N)
+     * - Character arrays for sorting.
      */
     public static boolean isAnagramWithSpaces(String str1, String str2) {
         if (str1.length() != str2.length())

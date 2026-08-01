@@ -1,33 +1,60 @@
 package programs.hashmaps;
 
+import org.testng.Assert;
+
 import java.util.*;
 
-// QUESTION: Given an array of strings, group the anagrams together. An anagram is a word or phrase
-// formed by rearranging the letters of a different word or phrase.
-// Example: Input: ["eat", "tea", "tan", "ate", "nat", "bat"]
-//          Output: [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
+/**
+ * LeetCode 49: Group Anagrams
+ *
+ * Problem Statement:
+ * Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+ * An anagram is a word or phrase formed by rearranging the letters of a different word or phrase.
+ *
+ * Constraints:
+ * - 1 <= strs.length <= 10^4
+ * - 0 <= strs[i].length <= 100
+ * - strs[i] consists of lowercase English letters.
+ */
 public class GroupAnagrams {
     public static void main(String[] args) {
         String[] arr = {"eat", "tea", "tan", "ate", "nat", "bat"};
 
-        System.out.println("Brute Force Approach (O(n²)):");
-        List<List<String>> result1 = groupAnagramsBruteForce(arr.clone());
-        for (List<String> group : result1) {
-            System.out.println(group);
-        }
+        List<List<String>> result1 = groupAnagramsOptimized(arr.clone());
+        Assert.assertEquals(result1.size(), 3);
 
-        System.out.println("\nOptimized Approach (O(n*k log k)):");
-        List<List<String>> result2 = groupAnagramsOptimized(arr);
-        for (List<String> group : result2) {
-            System.out.println(group);
-        }
+        List<List<String>> result2 = groupAnagramsBruteForce(arr.clone());
+        Assert.assertEquals(result2.size(), 3);
     }
 
     /**
-     * Approach 1: Brute Force
-     * Time Complexity: O(n² * k log k) where n is number of strings, k is avg string length
-     * Space Complexity: O(n)
-     * Use when interviewer asks NOT to use HashMap
+     * APPROACH 1: HashMap with Sorted Keys (Optimal)
+     *
+     * Time Complexity: O(N * K log K)
+     * - N strings, K is average string length for sorting.
+     *
+     * Space Complexity: O(N * K)
+     * - HashMap storing all strings.
+     */
+    public static List<List<String>> groupAnagramsOptimized(String[] strs) {
+        Map<String, List<String>> anagramMap = new HashMap<>();
+        for (String str : strs) {
+            char[] chars = str.toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
+            anagramMap.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
+        }
+        return new ArrayList<>(anagramMap.values());
+    }
+
+    /**
+     * APPROACH 2: Brute Force
+     *
+     * Time Complexity: O(N² * K log K)
+     * - N strings, comparing each pair with sorting.
+     *
+     * Space Complexity: O(N * K)
+     * - Result list storing all strings.
      */
     public static List<List<String>> groupAnagramsBruteForce(String[] strs) {
         List<List<String>> result = new ArrayList<>();
@@ -51,22 +78,5 @@ public class GroupAnagrams {
             }
         }
         return result;
-    }
-
-    /**
-     * Approach 2: HashMap with Sorted Keys
-     * Time Complexity: O(n * k log k) where n is number of strings, k is avg string length
-     * Space Complexity: O(n)
-     * Use when HashMap is allowed
-     */
-    public static List<List<String>> groupAnagramsOptimized(String[] strs) {
-        Map<String, List<String>> anagramMap = new HashMap<>();
-        for (String str : strs) {
-            char[] chars = str.toCharArray();
-            Arrays.sort(chars);
-            String key = new String(chars);
-            anagramMap.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
-        }
-        return new ArrayList<>(anagramMap.values());
     }
 }

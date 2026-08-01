@@ -1,17 +1,39 @@
 package programs.dp;
 
-public class EditDistance {
-    // QUESTION: Given two strings word1 and word2, return the minimum number of operations required to convert
-    // word1 to word2. You have the following three operations permitted on a word:
-    // - Insert a character
-    // - Delete a character
-    // - Replace a character
-    // Example: Input: word1 = "horse", word2 = "ros"
-    //          Output: 3 (horse -> rorse (replace 'h' with 'r') -> rose (remove 'r') -> ros (remove 'e'))
-    // Time Complexity: O(m * n)
-    // Space Complexity: O(m * n)
+import org.testng.Assert;
 
-    public static int minDistance(String word1, String word2) {
+/**
+ * LeetCode 72: Edit Distance
+ *
+ * Problem Statement:
+ * Given two strings word1 and word2, return the minimum number of operations required to convert
+ * word1 to word2. You have the following three operations permitted on a word:
+ * - Insert a character
+ * - Delete a character
+ * - Replace a character
+ *
+ * Constraints:
+ * - 0 <= word1.length, word2.length <= 500
+ * - word1 and word2 consist of lowercase English letters.
+ */
+public class EditDistance {
+
+    public static void main(String[] args) {
+        Assert.assertEquals(minDistanceDP("horse", "ros"), 3);
+        Assert.assertEquals(minDistanceDP("intention", "execution"), 5);
+        Assert.assertEquals(minDistanceBruteForce("horse", "ros"), 3);
+    }
+
+    /**
+     * APPROACH 1: Dynamic Programming (Optimal)
+     *
+     * Time Complexity: O(m * n)
+     * - m and n are lengths of the two strings.
+     *
+     * Space Complexity: O(m * n)
+     * - DP table of size (m+1) x (n+1).
+     */
+    public static int minDistanceDP(String word1, String word2) {
         int m = word1.length();
         int n = word2.length();
 
@@ -32,7 +54,7 @@ public class EditDistance {
                 } else {
                     dp[i][j] = 1 + Math.min(dp[i - 1][j - 1], // replace
                                    Math.min(dp[i - 1][j],    // delete
-                                            dp[i][j - 1]));  // insert
+ dp[i][j - 1]));  // insert
                 }
             }
         }
@@ -40,8 +62,33 @@ public class EditDistance {
         return dp[m][n];
     }
 
-    public static void main(String[] args) {
-        System.out.println(minDistance("horse", "ros")); // Output: 3
-        System.out.println(minDistance("intention", "execution")); // Output: 5
+    /**
+     * APPROACH 2: Brute Force (Recursion)
+     *
+     * Time Complexity: O(3^(m+n))
+     * - Exponential due to three choices at each step.
+     *
+     * Space Complexity: O(m + n)
+     * - Recursion stack depth.
+     */
+    public static int minDistanceBruteForce(String word1, String word2) {
+        return minDistanceHelper(word1, word2, word1.length(), word2.length());
+    }
+
+    private static int minDistanceHelper(String word1, String word2, int m, int n) {
+        if (m == 0) return n;
+        if (n == 0) return m;
+
+        if (word1.charAt(m - 1) == word2.charAt(n - 1)) {
+            return minDistanceHelper(word1, word2, m - 1, n - 1);
+        }
+
+        return 1 + Math.min(
+            minDistanceHelper(word1, word2, m, n - 1), // insert
+            Math.min(
+                minDistanceHelper(word1, word2, m - 1, n), // delete
+                minDistanceHelper(word1, word2, m - 1, n - 1) // replace
+            )
+        );
     }
 }

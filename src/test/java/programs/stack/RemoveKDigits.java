@@ -1,15 +1,38 @@
 package programs.stack;
 
+import org.testng.Assert;
+
 import java.util.Stack;
 
+/**
+ * LeetCode 402: Remove K Digits
+ *
+ * Problem Statement:
+ * Given string num representing a non-negative integer num, and an integer k,
+ * return the smallest possible integer after removing k digits from num.
+ *
+ * Constraints:
+ * - 1 <= k <= num.length <= 10^5
+ * - num consists of only digits.
+ * - num does not have any leading zeros except for the zero itself.
+ */
 public class RemoveKDigits {
-    // QUESTION: Given string num representing a non-negative integer num, and an integer k,
-    // return the smallest possible integer after removing k digits from num.
-    // Example: Input: num = "1432219", k = 3
-    //          Output: "1219"
-    // Time Complexity: O(n)
-    // Space Complexity: O(n)
 
+    public static void main(String[] args) {
+        Assert.assertEquals(removeKDigits("1432219", 3), "1219");
+        Assert.assertEquals(removeKDigits("10200", 1), "200");
+        Assert.assertEquals(removeKDigits("10", 2), "0");
+    }
+
+    /**
+     * APPROACH: Monotonic Stack (Optimal)
+     *
+     * Time Complexity: O(N)
+     * - Each digit is pushed and popped at most once.
+     *
+     * Space Complexity: O(N)
+     * - Stack storing digits.
+     */
     public static String removeKDigits(String num, int k) {
         if (k == 0) return num;
         if (k >= num.length()) return "0";
@@ -24,13 +47,11 @@ public class RemoveKDigits {
             stack.push(digit);
         }
 
-        // Remove remaining k digits from the end
         while (k > 0) {
             stack.pop();
             k--;
         }
 
-        // Build result and remove leading zeros
         StringBuilder result = new StringBuilder();
         boolean leadingZero = true;
         for (char digit : stack) {
@@ -40,16 +61,5 @@ public class RemoveKDigits {
         }
 
         return result.length() == 0 ? "0" : result.toString();
-    }
-
-    public static void main(String[] args) {
-        String num1 = "1432219";
-        System.out.println(removeKDigits(num1, 3)); // Output: 1219
-
-        String num2 = "10200";
-        System.out.println(removeKDigits(num2, 1)); // Output: 200
-
-        String num3 = "10";
-        System.out.println(removeKDigits(num3, 2)); // Output: 0
     }
 }

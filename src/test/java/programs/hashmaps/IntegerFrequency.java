@@ -1,16 +1,38 @@
 package programs.hashmaps;
 
+import org.testng.Assert;
+
+/**
+ * Integer Frequency (Without HashMap)
+ *
+ * Problem Statement:
+ * Given an array of integers, count the frequency of each element without using additional data structures like HashMap.
+ *
+ * Constraints:
+ * - 1 <= arr.length <= 10^4
+ * - -10^9 <= arr[i] <= 10^9
+ */
 public class IntegerFrequency {
-    // QUESTION: Given an array of integers, count the frequency of each element and print the results.
-    // Do not use additional data structures like HashMap.
-    // Example: Input: [1, 2, 3, 1, 2, 3, 4, 44] -> Output: Count of 1 is 2, Count of 2 is 2, etc.
-    //Time:O(n2)
-    //Space:O(n)
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 2, 3, 1, 2, 3, 4, 44};
+        countOccurrences(arr);
+    }
+
+    /**
+     * APPROACH: Brute Force with Visited Array
+     *
+     * Time Complexity: O(N²)
+     * - Nested loops to count occurrences.
+     *
+     * Space Complexity: O(N)
+     * - Visited array to track counted elements.
+     */
     public static void countOccurrences(int[] arr) {
         boolean[] visited = new boolean[arr.length];
         for (int i = 0; i < arr.length; i++) {
             if (!visited[i]) {
-                int count = 1; // Include the current element itself
+                int count = 1;
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[i] == arr[j]) {
                         count++;
@@ -20,10 +42,5 @@ public class IntegerFrequency {
                 System.out.println("Count of " + arr[i] + " is " + count);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        int[] arr = new int[]{1, 2, 3, 1, 2, 3, 4, 44};
-        countOccurrences(arr);
     }
 }
