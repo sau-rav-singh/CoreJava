@@ -1,13 +1,13 @@
-# CoreJava - old.LeetCode & Data Structures Practice
+# CoreJava - oldprograms.LeetCode & Data Structures Practice
 
-This repository is dedicated to practicing old.LeetCode problems and implementing fundamental Data Structures and Algorithms (dsa) in Java. It serves as a personal playground for learning and sharpening problem-solving skills.
+This repository is dedicated to practicing oldprograms.LeetCode problems and implementing fundamental Data Structures and Algorithms (datastructures) in Java. It serves as a personal playground for learning and sharpening problem-solving skills.
 
 ## Project Structure
 
 The project is organized into several packages based on the source of the problems or the topics being covered:
 
-*   **`src/test/java/LeetCode`**: Contains solutions to various old.LeetCode problems. Each file typically corresponds to a specific problem (e.g., `TwoSum`, `ValidAnagram`, `MergeSortedArrays`).
-*   **`src/test/java/dsa`**: Focuses on the implementation of core Data Structures.
+*   **`src/test/java/LeetCode`**: Contains solutions to various oldprograms.LeetCode problems. Each file typically corresponds to a specific problem (e.g., `TwoSum`, `ValidAnagram`, `MergeSortedArrays`).
+*   **`src/test/java/datastructures`**: Focuses on the implementation of core Data Structures.
     *   `linkedlist`: Custom implementations and exercises related to linked lists.
 *   **`src/test/java/Linkedin` & `src/test/java/Notion`**: Additional practice problems and notes from various sources.
 
