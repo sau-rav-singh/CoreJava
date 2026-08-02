@@ -8,11 +8,9 @@ import java.util.Set;
 
 /**
  * LeetCode 217: Contains Duplicate
- *
  * Problem Statement:
  * Given an integer array nums, return true if any value appears at least twice
  * in the array, and return false if every element is distinct.
- *
  * Constraints:
  * - 1 <= nums.length <= 10^5
  * - -10^9 <= nums[i] <= 10^9
@@ -27,12 +25,10 @@ public class ContainsDuplicate {
 
     /**
      * APPROACH 1: Sorting (In-Place)
-     *
      * Time Complexity: O(N log N)
      * - Arrays.sort(int[]) uses Dual-Pivot Quicksort.
      * - Sorting takes O(N log N) on average.
      * - Scanning adjacent elements takes O(N).
-     *
      * Space Complexity: O(log N)
      * - Auxiliary space is O(log N) due to the recursion stack used by Dual-Pivot Quicksort.
      * - Note: The array is sorted in-place (the input array is mutated).
@@ -52,11 +48,9 @@ public class ContainsDuplicate {
 
     /**
      * APPROACH 2: HashSet (Optimal Time)
-     *
      * Time Complexity: O(N)
      * - Inserting into and querying a HashSet takes O(1) time on average.
      * - Iterating through the array takes at most N steps.
-     *
      * Space Complexity: O(N)
      * - In the worst case (when all elements are distinct), the HashSet stores N integers.
      */
@@ -75,10 +69,8 @@ public class ContainsDuplicate {
 
     /**
      * APPROACH 3: Brute Force (Nested Loops)
-     *
      * Time Complexity: O(N^2)
      * - Checks every unique pair (N * (N - 1) / 2 comparisons in the worst case).
-     *
      * Space Complexity: O(1)
      * - Uses auxiliary constant space only; does not mutate the original array.
      */
