@@ -4,12 +4,10 @@ import org.testng.Assert;
 
 /**
  * LeetCode 88: Merge Sorted Array
- *
  * Problem Statement:
  * You are given two integer arrays nums1 and nums2, sorted in non-decreasing order,
  * and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
  * Merge nums1 and nums2 into a single array sorted in non-decreasing order.
- *
  * Constraints:
  * - nums1.length == m + n
  * - nums2.length == n
@@ -35,10 +33,8 @@ public class MergeSortedArrays {
 
     /**
      * APPROACH: Two Pointers (Backward Merging)
-     *
      * Time Complexity: O(M + N)
      * - We iterate backwards through both arrays at most M + N times.
-     *
      * Space Complexity: O(1)
      * - Merging is performed completely in-place within the extra space provided at the end of nums1.
      */
@@ -47,9 +43,9 @@ public class MergeSortedArrays {
             return;
         }
 
-        int i = m - 1; // Pointer for valid elements in nums1
-        int j = n - 1; // Pointer for elements in nums2
-        int k = m + n - 1; // Pointer for the end of the merged array (nums1)
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
 
         // Merge from back to front to avoid overwriting elements in nums1
         while (i >= 0 && j >= 0) {
@@ -63,8 +59,7 @@ public class MergeSortedArrays {
             k--;
         }
 
-        // If any elements remain in nums2, copy them over
-        // (Remaining elements in nums1 are already in place)
+        // If any elements remain in nums2, copy them over as Remaining elements in nums1 are already in place
         while (j >= 0) {
             nums1[k] = nums2[j];
             j--;

@@ -4,10 +4,10 @@ import org.testng.Assert;
 
 /**
  * LeetCode (Various): Find Minimum and Maximum in Array
- *
+ * <p>
  * Problem Statement:
  * Given an array of integers, find both the minimum and maximum elements in the array.
- *
+ * <p>
  * Constraints:
  * - 1 <= nums.length <= 10^5
  * - -10^9 <= nums[i] <= 10^9
@@ -23,18 +23,14 @@ public class MinMaxArray {
         result = findMinMaxLinear(arr);
         Assert.assertEquals(result[0], 3);
         Assert.assertEquals(result[1], 19);
-
-        result = findMinMaxBruteForce(arr);
-        Assert.assertEquals(result[0], 3);
-        Assert.assertEquals(result[1], 19);
     }
 
     /**
      * APPROACH 1: Optimal Comparison (Pair Comparison)
-     *
+     * <p>
      * Time Complexity: O(N)
      * - Processes elements in pairs, reducing total comparisons from 2N to 1.5N.
-     *
+     * <p>
      * Space Complexity: O(1)
      * - Uses constant extra space.
      */
@@ -78,10 +74,10 @@ public class MinMaxArray {
 
     /**
      * APPROACH 2: Linear Scan
-     *
+     * <p>
      * Time Complexity: O(N)
      * - Single pass through the array.
-     *
+     * <p>
      * Space Complexity: O(1)
      * - Uses constant extra space.
      */
@@ -97,34 +93,6 @@ public class MinMaxArray {
             }
             if (arr[i] > max) {
                 max = arr[i];
-            }
-        }
-        return new int[]{min, max};
-    }
-
-    /**
-     * APPROACH 3: Brute Force
-     *
-     * Time Complexity: O(N^2)
-     * - For each element, compare with all other elements.
-     *
-     * Space Complexity: O(1)
-     * - Uses constant extra space.
-     */
-    public static int[] findMinMaxBruteForce(int[] arr) {
-        if (arr == null || arr.length == 0) {
-            throw new IllegalArgumentException("Array is empty");
-        }
-        int min = arr[0];
-        int max = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[j] < min) {
-                    min = arr[j];
-                }
-                if (arr[j] > max) {
-                    max = arr[j];
-                }
             }
         }
         return new int[]{min, max};
