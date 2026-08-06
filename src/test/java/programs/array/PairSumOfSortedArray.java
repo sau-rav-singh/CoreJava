@@ -4,11 +4,9 @@ import org.testng.Assert;
 
 /**
  * LeetCode 167: Two Sum II - Input Array Is Sorted
- *
  * Problem Statement:
  * Given a sorted array of integers and a target sum, find if there exists a pair of elements
  * in the array that sum to the target. Return the pair if found.
- *
  * Constraints:
  * - 2 <= numbers.length <= 3 * 10^4
  * - -1000 <= numbers[i] <= 1000
@@ -26,10 +24,8 @@ public class PairSumOfSortedArray {
 
     /**
      * APPROACH 1: Two Pointers (Optimal for sorted arrays)
-     *
      * Time Complexity: O(N)
      * - Single pass from both ends.
-     *
      * Space Complexity: O(1)
      * - Uses constant extra space.
      */
@@ -53,10 +49,8 @@ public class PairSumOfSortedArray {
 
     /**
      * APPROACH 2: Brute Force
-     *
      * Time Complexity: O(N^2)
      * - Checks every pair of elements.
-     *
      * Space Complexity: O(1)
      * - Uses constant extra space.
      */
